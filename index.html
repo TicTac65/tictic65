@@ -2284,6 +2284,7 @@ const themes = {
   fraude_documentaire: {
     name: "La fraude documentaire",
     icon: "🪪",
+    introHtml: `<div class="flashcard-html"><p><strong>AVERTISSEMENT :</strong> à savoir pour l'examen, ce qui suit et seulement ce qui suit (le reste c'est normalement ta culture personnelle)</p><p><strong>Citez 2 sécurités de bases :</strong></p><ul><li><strong>Filigrane :</strong> image, motif ou texte intégré dans l’épaisseur du papier lors de sa fabrication, visible par transparence et obligatoire sur les documents papier sécurisés.</li><li><strong>Neutralité des supports sécurisés sous UV :</strong> un document sécurisé ne doit normalement pas fluorescer sous lumière UV, donc une réaction bleue du support ou des écritures peut révéler un faux.</li><li><strong>Qualité du fond d’impression :</strong> le fond d’un document sécurisé doit être net, propre, précis et sans bavure.</li><li><strong>Sécurités optiquement variables :</strong> éléments de sécurité dont l’apparence change selon l’angle de vue ou la lumière, comme les encres variables, les marques optiques ou les images laser variables.</li><li><strong>Gaufrage :</strong> relief créé en fin de fabrication du document, permettant d’ajouter une sécurité tactile et visuelle.</li></ul><p><strong>Citez 2 encres :</strong></p><ul><li>Encres optiquement variables : elles changent de couleur en fonction de la luminosité, inclinaison</li><li>Marques optiquement variables</li><li>Image laser variable</li></ul><p><strong>ACCES :</strong></p><ul><li><strong>Apparence :</strong> comparaison de la photographie sur le document d’identité et la personne en face de nous</li><li><strong>Cohérence :</strong> comparaison entre les données personnelles inscrites sur le document (âge, taille, sexe) et la personne en face de nous (poser des questions)</li><li><strong>Consultation de fichiers :</strong> Consulter les fichiers administratifs</li><li><strong>Examen :</strong> du support (papier sécurisé ou plastique : polycarbonate) et des sécurités</li><li><strong>Sécurités :</strong> contrôler les sécurités de 1er niveau suivant le document (encre optiquement variable, image laser variable)</li></ul></div>`,
     questions: [
       {
         type: "flashcard",
@@ -5937,7 +5938,7 @@ function openSubject(key) {
 function startTheme(key) {
   currentThemeKey = key;
   currentQuestions = [...themes[key].questions];
-  currentIndex = 0;
+  currentIndex = themes[key].introHtml ? -1 : 0;
   score = 0;
   hideAllViews();
   document.getElementById("quiz").style.display = "block";
@@ -5948,10 +5949,36 @@ function startTheme(key) {
 function loadQuestion() {
   answered = false;
   flashcardFlipped = false;
-  const q = currentQuestions[currentIndex];
+  const theme = themes[currentThemeKey];
+  const isIntro = currentIndex === -1;
   const total = currentQuestions.length;
-  const isFlashcard = q.type === "flashcard";
   const questionBox = document.querySelector(".question-box");
+  const container = document.getElementById("answersContainer");
+  const fb = document.getElementById("feedback");
+
+  if (isIntro) {
+    questionBox.classList.remove("flashcard-mode", "is-clickable");
+    questionBox.onclick = null;
+    attachSwipeHandlers(questionBox);
+    document.getElementById("progressBar").style.width = "0%";
+    document.getElementById("quizCounter").textContent = "Introduction";
+    document.getElementById("question").innerHTML = theme.introHtml;
+    container.innerHTML = "";
+    fb.style.display = "none";
+    fb.className = "";
+    fb.innerHTML = "";
+    document.getElementById("btnFlip").style.display = "none";
+    document.getElementById("btnPrevious").disabled = true;
+    document.getElementById("btnPrevious").style.opacity = "0.55";
+    document.getElementById("btnPrevious").style.cursor = "not-allowed";
+    document.getElementById("btnValidate").style.display = "none";
+    document.getElementById("btnNext").style.display = "inline-block";
+    document.getElementById("btnNext").textContent = "Commencer";
+    return;
+  }
+
+  const q = currentQuestions[currentIndex];
+  const isFlashcard = q.type === "flashcard";
   questionBox.classList.toggle("flashcard-mode", isFlashcard);
   questionBox.classList.toggle("is-clickable", isFlashcard);
   questionBox.onclick = isFlashcard ? () => {
@@ -5962,7 +5989,6 @@ function loadQuestion() {
   document.getElementById("progressBar").style.width = (currentIndex / total * 100) + "%";
   document.getElementById("quizCounter").textContent = `${isFlashcard ? "Flashcard" : "Question"} ${currentIndex + 1} / ${total}`;
   renderQuestionFace();
-  const container = document.getElementById("answersContainer");
   container.innerHTML = "";
 
   if (isFlashcard) {
@@ -6006,7 +6032,6 @@ function loadQuestion() {
     container.appendChild(list);
   }
 
-  const fb = document.getElementById("feedback");
   fb.style.display = "none";
   fb.className = "";
   fb.innerHTML = "";
@@ -6092,6 +6117,11 @@ function flipFlashcard() {
 function nextQuestion() {
   if (swipeAnimating) return;
   animateQuestionTransition("next", () => {
+    if (currentIndex === -1) {
+      currentIndex = 0;
+      loadQuestion();
+      return;
+    }
     currentIndex++;
     if (currentIndex >= currentQuestions.length) { showFinalScore(); return; }
     loadQuestion();
@@ -6099,7 +6129,7 @@ function nextQuestion() {
 }
 
 function previousQuestion() {
-  if (swipeAnimating || currentIndex === 0) return;
+  if (swipeAnimating || currentIndex <= 0) return;
   animateQuestionTransition("previous", () => {
     currentIndex--;
     loadQuestion();
