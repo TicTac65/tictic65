@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="QCM Police">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a3a6b" />
+      <stop offset="100%" stop-color="#2d5ca6" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)" />
+  <rect x="96" y="108" width="320" height="296" rx="28" fill="#ffffff" opacity="0.98" />
+  <rect x="132" y="156" width="150" height="24" rx="12" fill="#d8e3f6" />
+  <rect x="132" y="206" width="248" height="18" rx="9" fill="#d8e3f6" />
+  <rect x="132" y="246" width="220" height="18" rx="9" fill="#d8e3f6" />
+  <circle cx="156" cy="322" r="18" fill="#27ae60" />
+  <path d="M148 322l7 7 14-16" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" />
+  <rect x="188" y="313" width="160" height="18" rx="9" fill="#d8e3f6" />
+  <text x="256" y="434" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#ffffff">QCM</text>
+</svg>

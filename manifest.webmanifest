@@ -1,0 +1,19 @@
+{
+  "name": "QCM Revision Police",
+  "short_name": "QCM Police",
+  "description": "Application web de revision police utilisable sur iPhone depuis Safari.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f0f2f5",
+  "theme_color": "#1a3a6b",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
