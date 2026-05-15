@@ -18,10 +18,15 @@ html { -webkit-text-size-adjust: 100%; }
 body { font-family: Arial, sans-serif; background: #f0f2f5; padding: calc(env(safe-area-inset-top, 0px) + 20px) calc(env(safe-area-inset-right, 0px) + 20px) calc(env(safe-area-inset-bottom, 0px) + 20px) calc(env(safe-area-inset-left, 0px) + 20px); min-height: 100vh; min-height: 100dvh; overscroll-behavior: none; touch-action: manipulation; }
 .container { background: white; border-radius: 12px; max-width: 960px; margin: auto; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
 .header { background: #1a3a6b; color: white; padding: 24px 28px; }
+.header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .header h1 { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
 .header p { font-size: 13px; opacity: 0.75; margin-top: 4px; }
 .install-note { margin-top: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.12); font-size: 12px; line-height: 1.5; }
 .install-note strong { color: #fff; }
+.header-actions { display: flex; justify-content: flex-end; flex-shrink: 0; }
+.home-btn { background: rgba(255,255,255,0.14); color: white; border: 1.5px solid rgba(255,255,255,0.35); border-radius: 999px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.15s, transform 0.15s; }
+.home-btn:hover { background: rgba(255,255,255,0.22); transform: translateY(-1px); }
+.home-btn svg { width: 18px; height: 18px; display: block; fill: currentColor; }
 .progress-bar-wrap { background: #e8ecf5; height: 5px; }
 .progress-bar-fill { background: #1a3a6b; height: 5px; transition: width 0.3s; }
 .menu-screen { padding: 28px; }
@@ -135,8 +140,11 @@ body { font-family: Arial, sans-serif; background: #f0f2f5; padding: calc(env(sa
   body { padding: calc(env(safe-area-inset-top, 0px) + 12px) calc(env(safe-area-inset-right, 0px) + 12px) calc(env(safe-area-inset-bottom, 0px) + 12px) calc(env(safe-area-inset-left, 0px) + 12px); }
   .container { border-radius: 16px; }
   .header { padding: 20px 18px; }
+  .header-bar { align-items: stretch; flex-direction: column; }
   .header h1 { font-size: 18px; }
   .header p { font-size: 12px; }
+  .header-actions { justify-content: flex-start; }
+  .home-btn { width: fit-content; }
   .menu-screen,
   #quiz,
   #final-score { padding: 18px; }
@@ -153,9 +161,20 @@ body { font-family: Arial, sans-serif; background: #f0f2f5; padding: calc(env(sa
 <body>
 <div class="container">
   <div class="header">
-    <h1 id="adminTrigger" class="admin-trigger">QCM — Révision Police</h1>
-    <p>Entraînement aux cadres juridiques et procédures</p>
+    <div class="header-bar">
+      <div>
+        <h1 id="adminTrigger" class="admin-trigger">QCM — Révision Police</h1>
+        <p>Entraînement aux cadres juridiques et procédures</p>
     <p class="install-note"><strong>iPhone :</strong> ouvrez ce site dans Safari, touchez <strong>Partager</strong>, puis <strong>Sur l'ecran d'accueil</strong>.</p>
+      </div>
+      <div class="header-actions">
+        <button class="home-btn" type="button" onclick="goSubjects()" aria-label="Retour au menu principal" title="Retour au menu principal">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3.2 3.8 10v10.2h5.7v-6.1h5V20h5.7V10L12 3.2zm0 2.6 6.2 5.1v7.3h-2.1v-6.1H7.9v6.1H5.8v-7.3L12 5.8z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
   <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div>
 
@@ -6412,6 +6431,28 @@ function downloadThemeAnswers(themeKey) {
   URL.revokeObjectURL(url);
 }
 
+function setupKeyboardNavigation() {
+  document.addEventListener("keydown", (event) => {
+    if (document.getElementById("quiz").style.display === "none") return;
+    if (document.getElementById("adminCodeOverlay").style.display === "flex") return;
+    const activeTag = document.activeElement?.tagName;
+    if (activeTag === "INPUT" || activeTag === "TEXTAREA" || activeTag === "SELECT") return;
+    if (event.key === "ArrowRight") {
+      const nextButton = document.getElementById("btnNext");
+      if (nextButton.style.display !== "none") {
+        event.preventDefault();
+        nextQuestion();
+      }
+    }
+    if (event.key === "ArrowLeft") {
+      if (currentIndex > 0) {
+        event.preventDefault();
+        previousQuestion();
+      }
+    }
+  });
+}
+
 function escHtml(str) {
   str = String(str ?? "");
   return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
@@ -6437,6 +6478,7 @@ if ("serviceWorker" in navigator) {
   });
 }
 setupAdminTrigger();
+setupKeyboardNavigation();
 </script>
 </body>
 </html>
