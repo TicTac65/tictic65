@@ -259,7 +259,7 @@ const subjects = {
     name: "Sécurité routière",
     icon: "🚓",
     description: "Infractions routières, contrôles et procédures associées",
-    themes: ["permis_conduire", "amendes", "annales_sr_1"]
+    themes: ["permis_conduire", "amendes", "annales_sr_1", "controle_routier", "retention_pc", "immobilisation", "mise_en_fourriere", "amende_consignation", "ceea_cei_stup", "avp_accident_circulation", "organisation_cr", "rodeo", "refus_obtemperer"]
   },
   deftic: {
     name: "DEFTIC",
@@ -3655,6 +3655,1094 @@ La réponse correcte est : Vrai`
         choices: ["Oui", "Non"],
         answer: [1],
         expHtml: "La réponse correcte est : Non<div class=\"answer-note\">Amende forfaitaire pas applicable si au moins une des infractions ne peut pas être payée par amende forfaitisable</div>"
+      }
+    ]
+  },
+  controle_routier: {
+    name: "Contrôle routier",
+    icon: "🚨",
+    questions: [
+      {
+        type: "flashcard",
+        q: "Quels articles constituent la base légale du contrôle routier administratif ? Que permettent-t-ils opérationnellement parlant ?",
+        a: "Les articles R.233-1 et R.233-3 du Code de la route constituent la base légale du contrôle routier.\n« Tout conducteur d’un véhicule à moteur est tenu de présenter à toute réquisition des agents de l’autorité compétente, les documents exigés. »\nIl permet donc un contrôle routier sans qu’une infraction préalable soit nécessaire."
+      },
+      {
+        type: "flashcard",
+        q: "Quels cadres d’enquête peuvent être immédiatement visés par les agents dans le cadre d’une infraction routière ?",
+        a: "Si des infractions sont constatées en amont de l’interception du véhicule, les cadres d’enquête de flagrance ou d’enquête préliminaire peuvent être visés."
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle routier, un conducteur est intercepté pour plusieurs infractions. Les agents constatent : une contravention routière simple forfaitisée et une contravention de 5e classe et une contravention de 4e classe pouvant entraîner une suspension du permis sur instruction du parquet. Quelle rédaction procédurale doit être effectuée ?",
+        a: "Il ne faut pas se limiter à une simple rédaction sur NEO / PVe. En principe, une contravention simple peut être rédigée sur NEO, mais ici, il existe une pluralité d’infractions, dont certaines nécessitent un PV ordinaire :\nIl faut donc rédiger un PV ordinaire regroupant les infractions concernées."
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle routier, un conducteur est intercepté après avoir commis plusieurs infractions. Les agents constatent : un délit routier et deux contraventions forfaitisée. Vos effectifs s’apprêtent à rédiger : un PV pour le délit et un PVe séparé pour chaque contravention sur deux NEO différents. Que faites-vous ?",
+        a: "Vous les orienter vers une autre procédure car cette rédaction n’est pas correcte. En cas de délit + contravention, il faut faire un seul et même PV.\nIl ne faut pas séparer les procédures, car le paiement de la contravention par PVe peut entraîner l’extinction de l’action publique. De même, en cas de pluralité de contraventions, il faut éviter de faire plusieurs PVe séparés sur plusieurs NEO. Il faut faire une rédaction unique et cohérente regroupant les forfaitisations concernées."
+      },
+      {
+        type: "flashcard",
+        q: "Quelques semaines plus tard, votre chef de service vient vous voir dans votre bureau, il n’a pas l’air content car il vient de recevoir une lettre émanant du tribunal administratif à propos d’un contrôle routier que vous avez mis en place des semaines auparavant et plus particulièrement d’un PV d’infraction jugé illégal. Quel peut être la raison de cette illégalité ?",
+        a: "L’individu ayant fait l’objet du PV d’infractions s’est vu retiré 9 points à l’issue de son contrôle, or le retrait des points est limité à un cumul de 8 points, article R223-2 du Code de la route. L’individu s’est donc vu restitué l'intégralité des points.\nATTENTION : CEA/CEI + STUP = 9 points, c’est ok"
+      },
+      {
+        type: "flashcard",
+        q: "Lors du contrôle d’un permis français, quelle consultation est obligatoire ?",
+        a: "La consultation du SNPC est obligatoire. Il faut également vérifier la correspondance avec la catégorie du véhicule conduit."
+      },
+      {
+        type: "flashcard",
+        q: "Vous contrôler un individu de nationalité brésilien conduisant en France avec un PC brésilien. L’individu est-il en règle ?",
+        a: "Il est en règle s’il se trouve en court séjour et à condition que le permis soit valide. Il ne faut pas oublier de vérifier le SNPC quand même !"
+      },
+      {
+        type: "flashcard",
+        q: "Hugo se rend au commissariat de Creil pour déclarer le vol de son permis de conduire. A l’issue de sa plainte, Corentin, officier fraîchement installé lui déclare qu’il ne peut plus conduire jusqu’à avoir reçu son nouveau permis. Corentin est-il un bon Lieutenant ?",
+        a: "Non, Corentin n’est pas un bon Lieutenant, car Hugo peut conduire durant 2 mois après sa déclaration de perte/vol. Corentin devrait également conseiller à Hugo d’être toujours muni de sa déclaration de plainte dans les deux prochains mois."
+      },
+      {
+        type: "flashcard",
+        q: "Adrien vient d’obtenir son permis de conduire mais malheureusement, l’ANTS s’est fait pirater il y a quelques semaines, il ne peut donc pas faire sa demande de permis de conduire. A l’aide quel document et pendant combien de temps au maximum peut-il conduire en toute légalité ?",
+        a: "A l’aide de son certificat de réussite à l’examen du permis de conduire, il pourra conduire en toute légalité pendant au maximum 4 mois.\nDès que possible, il devra faire sa demande permis de conduire et se munir du récépissé de la demande pour conduire jusqu’à l’obtention du document officiel."
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les véhicules qui doivent obligatoirement être muni d’un certificat d’immatriculation ?",
+        a: "Tous véhicules à moteur homologués, donc pas les véhicules avec numéro d’identification, et les remorques > 500 kg."
+      },
+      {
+        type: "flashcard",
+        q: "Quelle différence entre une plaque W et une plaque WW ?",
+        a: "La plaque W garage est une plaque provisoire réservée aux professionnels de l’automobile. Elle sert principalement pour des essais, des transferts ou des déplacements liés à l’activité du garage. Elle est amovible et ne peut être utilisée que sur un seul véhicule à la fois.\nLa plaque WW correspond à une immatriculation provisoire d’un véhicule en attente d’immatriculation définitive. Elle est valable en principe 2 mois, ou 3 mois pour les véhicules agricoles, avec possibilité de prorogation une fois. Elle permet la circulation en France et à l’étranger."
+      },
+      {
+        type: "flashcard",
+        q: "Hugo se rend une fois de plus au commissariat de Creil pour déclarer le vol de sa carte grise. A l’issue de sa plainte, Corentin, officier fraîchement installé lui déclare qu’il peut conduire pendant 1 mois et qu’il n’a plus aucune déclaration à faire, juste à attendre sa nouvelle carte grise. Corentin est-il un bon Lieutenant ?",
+        a: "Non, Corentin n’est pas un bon Lieutenant, car Hugo peut conduire pendant 1 mois après sa déclaration de perte/vol, cependant, il doit également faire une déclaration sur l’ANTS et se munir du récépissé délivré, ce dernier faisant fois et remplaçant provisoirement sa carte grise durant 1 mois effectif."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur présente une photocopie de carte grise pour un véhicule en LOA. Est-ce accepté ?",
+        a: "Non. La photocopie n’est pas valable pour une LOA. En revanche elle est autorisée pour une location simple."
+      },
+      {
+        type: "flashcard",
+        q: "Quels documents ton petit frère de 14 ans, sur son scooter 50cc KTM orange agressif, doit il présenter aux policiers le contrôlant devant le collège à la sortie des cours ?",
+        a: "Il doit présenter 3 documents : document qui atteste que vous avez plus de 14 ans, certificat d'immatriculation du 2 roues ainsi que son BSR/permis AM. Les policiers veilleront à vérifier le FVA."
+      },
+      {
+        type: "flashcard",
+        q: "Didier, ton oncle beauf particulièrement casse-pied, se fait arrêter par la BAC à la sortie d’une cousinade bien arrosée. Hormis le volet répressif, quel équipement peut équiper sa voiture à l’issue de son jugement ? Et que devra-t-il désormais présenter comme document supplémentaire lors d’un futur contrôle routier ?",
+        a: "L'attestation d'équipement du véhicule d'un dispositif homologué d'antidémarrage par éthylotest électronique, EAD, et de la vérification de son fonctionnement lorsque le conducteur est soumis à cette obligation."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur circule avec un véhicule à moteur non assuré. Quel texte impose l’assurance obligatoire ?",
+        a: "L’article L.211-1 du Code des assurances impose l’assurance obligatoire pour tout véhicule à moteur."
+      },
+      {
+        type: "flashcard",
+        q: "Vous contrôlez Antoine sur une trottinette électrique Xiaomi Scooter 5 Pro. Ce dernier vous présente un certificat provisoire de moins de 2 mois justifiant l’assurance du véhicule. Laissez-vous repartir Antoine ?",
+        a: "Non, car le certificat provisoire n’est valable que durant 1 mois maximum. Je vais devoir vérifier le FVA.\nAussi, je vérifie la présence du certificat d’assurance apposé sur le véhicule. La non-apposition du certificat d’assurance constitue une contravention de 2ème classe."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur présente un mémo “véhicule assuré” de moins de 10 jours, directement depuis son smartphone. Est-ce recevable ?",
+        a: "Oui. Le mémo “véhicule assuré” peut servir de preuve pendant 15 jours, que cela soit en papier ou dématérialisé."
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle, le FVA indique que le véhicule est assuré. Faut-il exiger un autre document ?",
+        a: "Non. La consultation du FVA suffit à prouver l’assurance.\nATTENTION : pour les véhicules non-immatriculés, apposition obligatoire."
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle, le FVA n’est pas concluant. Le conducteur peut-il présenter une autre preuve ?",
+        a: "Oui. Il peut présenter une preuve alternative, comme le mémo véhicule assuré pendant 15 jours ou une autre preuve judiciaire."
+      },
+      {
+        type: "flashcard",
+        q: "Dans un PV relatif à l’assurance, quels articles doivent impérativement être mentionnés ?",
+        a: "Les articles R.211-14 et suivants du Code des assurances doivent être mentionnés obligatoirement."
+      },
+      {
+        type: "flashcard",
+        q: "Vos effectifs contrôlent le conducteur d’un véhicule dans le cadre d’un contrôle routier de grande ampleur. Au bout de 5 minutes, vos effectifs décident de contrôler les deux autres passagers. Qu’est ce qui, légalement, peut autoriser un tel contrôle ?",
+        a: "Si les passagers ont commis ou tenté de commettre une infraction, ou sont susceptible de fournir des renseignements utiles à l'enquête en cas de crime ou délit, il peut leur être demander de justifier de leur identité, ou plaque étrangère voir PA.\nLes infractions suivantes : non-port ceinture ; interdiction de fumer avec mineur ; usages stupéfiants ; outrage ; participation infraction, peuvent justifier le contrôle des passagers d’un véhicule peuvent entrer dans ce cadre."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les conditions pour être accompagnateur d’un apprenti conducteur ?",
+        a: "Il y a 4 obligations pour l’accompagnateur :\n- PC depuis ≥ 5 ans dans la catégorie visée\n- Pas d’annulation/suspension dans les 5 ans précédents\n- Nom de l’accompagnant inscrit au contrat d’apprentissage et au livret\n- Extension d’assurance pour l’apprenti\nATTENTION : ce n’est pas un passager, mais il est associé au conducteur !"
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle routier, un conducteur présente une carte diplomatique. Les agents constatent un délit routier et souhaitent procéder à son interpellation. En tant qu’officier de permanence, que devait vous faire ?",
+        a: "En présence d’une immunité diplomatique, aucune arrestation n’est possible et aucune mesure coercitive ne doit être prise. Les agents doivent relever les éléments utiles, rendre compte à leur hiérarchie et laisser repartir la voiture et le conducteur."
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle routier, les agents apprennent que le conducteur contrôlé est parlementaire. Un collègue propose de procéder immédiatement au contrôle. En tant qu’officier responsable du contrôle, que faites-vous ?",
+        a: "Il faut, si possible, informer le procureur avant l’opération. Un OPJ doit également être sollicité avant tout contrôle impliquant un parlementaire, mais c’est bon puisque vous êtes OPJ."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les différentes possibilités d’accès ou de visite d’un véhicule lors d’un contrôle routier ?",
+        a: "1 - Accès au compartiment moteur : il permet l’ouverture du capot pour vérifier les inscriptions frappées, l’identification, la conformité du véhicule, ou rechercher un vol / recel.\n2 - Accès au coffre : il permet de contrôler le triangle et le gilet haute visibilité, ou de vérifier les inscriptions frappées si elles se trouvent dans le coffre, attention avec parcimonie.\n3 - 78-2-2 : visite sur réquisitions du procureur : elle nécessite des réquisitions du procureur, vise des infractions graves, et doit être limitée dans le temps et dans le lieu, pour une durée maximale de 24 heures.\n4 - 78-2-3 : visite en cas de crime ou délit flagrant : elle est possible s’il existe des raisons plausibles de soupçonner que le conducteur ou un passager est auteur ou complice d’un crime ou délit flagrant.\n5 - 78-2-4 : visite préventive pour risque d’atteinte aux biens et aux personnes."
+      },
+      {
+        type: "flashcard",
+        q: "A quoi sert le fichier EuVID ?",
+        a: "C’est une base Europol permettant de localiser les numéros de série sur un véhicule, vérifier la concordance et contrôler la légalité des documents."
+      },
+      {
+        type: "flashcard",
+        q: "A quoi sert le fichier DICEM ?",
+        a: "Le DICEM signifie Déclaration et Identification de Certains Engins Motorisés. C’est un fichier qui sert à déclarer et identifier certains engins motorisés non autorisés à circuler sur la voie publique et qui ne sont pas soumis à l’immatriculation classique : par exemple mini-motos, motocross, quads, dirt bikes, etc."
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle, les agents découvrent dans un utilitaire plusieurs vélos de valeur. L’un des vélos porte un marquage d’identification sur le cadre, mais le conducteur n’est pas capable d’expliquer clairement son origine. Quel fichier peut être consulté et dans quel but ?",
+        a: "Les agents peuvent consulter le FNUCI, c’est-à-dire le Fichier National Unique des Cycles Identifiés. Ce fichier permet de vérifier : si le vélo est identifié ; à qui il est rattaché ; s’il est déclaré volé en le couplant avec le FOVES."
+      },
+      {
+        type: "flashcard",
+        q: "Quel article du Code de la route encadre le document du permis de conduire ?",
+        a: "C’est l’article L221-2 CR, à connaître."
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est-ce que l’harmonisation européenne du PC et de quand date-t-elle ?",
+        a: "Depuis le 19 janvier 2013, les 27 États membres de l'UE utilisent les mêmes catégories et mêmes caractéristiques de permis.\nFormat harmonisé avec NEPH."
+      },
+      {
+        type: "flashcard",
+        q: "Comment s’appelle la suite de chiffre présent sur le nouveau PC ?",
+        a: "Le NEPH, Numéro d’enregistrement Préfectoral Harmonisé, composé de 12 chiffres, parfois moins selon l’ancienneté. Il est composé de la manière suivante :\n- 2 premiers chiffres : année d’inscription, ex. 91 = 1991.\n- 2 suivants : mois, ex. 10 = octobre.\n- 2 suivants : département, ex. 91 = Essonne.\n- 2 suivants : numéro de la préfecture / sous-préfecture, ex. 20.\n- 4 derniers : ordre d’inscription, ex. 4209."
+      },
+      {
+        type: "flashcard",
+        q: "Quel code particulier peut apparaître sur un permis de conduire ?",
+        a: "Un ou plusieurs codes restrictifs peuvent apparaître sur un PC, pour raisons médicales, adaptation du véhicule, pour raisons administratives."
+      }
+    ]
+  },
+  retention_pc: {
+    name: "Rétention du PC",
+    icon: "⛔",
+    questions: [
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle routier à 23h40, un conducteur est soumis au dépistage alcoolique. Le dépistage est positif. La vérification par éthylomètre donne un taux de 0,46 mg/L d’air expiré. Le conducteur vous remet immédiatement son permis de conduire. Il est seul dans le véhicule. Que faites-vous concernant le permis et le véhicule ?",
+        a: "Il faut procéder à la rétention immédiate du permis de conduire car le taux relevé est supérieur ou égal à 0,40 mg/L d’air expiré. La rétention est une mesure conservatoire et administrative prise sous l’autorité du préfet.\nUn avis de rétention doit être rédigé et remis au conducteur. La durée de rétention peut aller jusqu’à 120 heures. Le préfet devra décider dans ce délai s’il prononce une suspension administrative du permis.\nLe véhicule est immobilisé d’office, sauf si un conducteur qualifié peut le reprendre. Ici, le conducteur est seul, donc le véhicule est immobilisé."
+      },
+      {
+        type: "flashcard",
+        q: "À 2h15, un conducteur est contrôlé avec un taux de 0,31 mg/L d’air expiré. Il n’est pas en état d’ivresse manifeste, il coopère et présente son permis de conduire. Peut-on retenir son permis sur le fondement de la rétention administrative ?",
+        a: "Non. Le cas alcool prévu nécessite notamment un taux supérieur ou égal à 0,40 mg/L d’air expiré, un état d’ivresse ou un refus de dépistage ou de vérification. Ici, le taux est de 0,31 mg/L, il n’y a pas d’état d’ivresse manifeste et il n’y a pas de refus.\nIl peut y avoir une infraction alcoolique, mais pas de rétention administrative du permis dans ce cas précis."
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle, un automobiliste présente une haleine alcoolisée et des propos incohérents. Vous lui demandez de se soumettre au dépistage alcoolique. Il refuse catégoriquement de souffler. La rétention du permis est-elle possible ?",
+        a: "Oui. Le refus de dépistage ou de vérification alcoolique fait partie des cas nécessitant la rétention.\nUn avis de rétention doit être rédigé et remis au conducteur.\nLe véhicule est immobilisé d’office, sauf si un conducteur qualifié peut le reprendre.\nLa durée de rétention peut aller jusqu’à 120 heures, et le préfet pourra ensuite décider d’une suspension administrative."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur est contrôlé à la sortie d’un festival. Le test salivaire de dépistage des stupéfiants est positif. Il présente son permis et ne conteste pas le contrôle. Quelle mesure prenez-vous ?",
+        a: "Il faut procéder à la rétention du permis de conduire.\nUn avis de rétention doit être rédigé et remis au conducteur.\nLe véhicule est immobilisé d’office, sauf si un conducteur qualifié peut le reprendre.\nLa durée de rétention peut aller jusqu’à 120 heures, car des analyses médicales ou biologiques peuvent être nécessaires. Le préfet pourra prendre une décision de suspension administrative dans ce délai."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur est intercepté après une conduite dangereuse. Il a les yeux rouges, des propos incohérents et une odeur de cannabis se dégage de l’habitacle. Aucun test salivaire n’est immédiatement disponible. Peut-on retenir son permis ?",
+        a: "Oui, la rétention du permis est possible s’il existe des raisons plausibles de soupçonner l’usage de stupéfiants. Les stupéfiants entrent dans le champ de la rétention en cas de dépistage positif, de raisons plausibles ou de refus de vérification.\nIl faut rédiger un avis de rétention.\nLe véhicule est immobilisé d’office, sauf si un conducteur qualifié peut le reprendre.\nLa durée de rétention peut aller jusqu’à 120 heures en raison des analyses médicales ou biologiques."
+      },
+      {
+        type: "flashcard",
+        q: "Un APJA constate aux jumelles qu’un conducteur circule à 137 km/h sur une route limitée à 90 km/h. Le conducteur est intercepté immédiatement. L’APJA peut-il mettre en œuvre la rétention du permis ?",
+        a: "Oui. Les APJA peuvent intervenir dans certains cas précis, notamment pour les excès de vitesse d’au moins 40 km/h.\nUn avis de rétention doit être rédigé et remis au conducteur.\nLe véhicule est immobilisé d’office, sauf si un conducteur qualifié peut le reprendre.\nLa durée de rétention est de 72 heures.\nNOTE : l’APJA peut également faire la procédure pour contravention + téléphone en main."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur est contrôlé à 124 km/h sur une route limitée à 90 km/h. Il présente son permis. La rétention du permis est-elle possible ?",
+        a: "Non. La rétention du permis pour excès de vitesse nécessite un dépassement d’au moins 40 km/h."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur est vu en train de tenir son téléphone en main. Dans le même temps, il franchit une ligne continue. Il est intercepté par un APJA. Une rétention du permis est-elle possible ?",
+        a: "Oui. La rétention est possible en cas de téléphone tenu en main accompagné d’une contravention simultanée prévue par les textes. Dans ce cas précis, l’APJA peut mettre en œuvre la rétention.\nUn avis de rétention doit être rédigé et remis au conducteur.\nLe véhicule est immobilisé d’office, sauf si un conducteur qualifié peut le reprendre.\nLa durée de rétention est de 72 heures.\nLe préfet pourra décider d’une suspension administrative dans ce délai."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur percute un cycliste, qui est blessé. Plusieurs témoins indiquent que le conducteur aurait grillé un stop. Le conducteur présente son permis. Peut-on procéder à la rétention du permis ?",
+        a: "Oui. La rétention est possible en cas d’accident corporel ou mortel lorsqu’il existe une suspicion de non-respect des règles de conduite.\nUn avis de rétention doit être rédigé et remis au conducteur.\nLe véhicule est immobilisé d’office, sauf si un conducteur qualifié peut le reprendre.\nLa durée de rétention est en principe de 72 heures, sauf analyses médicales ou biologiques nécessaires, 120 heures."
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle pour alcoolémie délictuelle, le conducteur indique qu’il a oublié son permis chez lui. Le taux relevé est de 0,44 mg/L d’air expiré. Que faire ?",
+        a: "L’avis de rétention doit être rédigé même si le permis n’est pas immédiatement remis. Le conducteur doit être mis en demeure de remettre son permis dans un délai de 24 heures. Le non-respect de cette obligation constitue une infraction."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur a fait l’objet d’une rétention de permis à la suite d’un dépistage stupéfiants positif. Aucune décision préfectorale n’est prise dans le délai de 120 heures. Que devient le permis ?",
+        a: "En l’absence de décision préfectorale dans le délai prévu, le permis doit être remis à disposition du conducteur. Il est disponible dans le service désigné pendant 12 heures suivant la fin de la rétention.\nSi la fin de la rétention intervient dans le créneau 18h-22h, une prorogation peut s’appliquer."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur fait l’objet d’une rétention de permis à 18h pour alcoolémie délictuelle. Le lendemain matin, il est contrôlé au volant d’un autre véhicule alors que la rétention est toujours en cours. Quelle infraction commet-il ?",
+        a: "Il commet l’infraction de conduite pendant la rétention du permis.\nPeine encourue : 2 ans d’emprisonnement et 4 500 euros d’amende.\nPeines complémentaires possibles : confiscation du véhicule, suspension du permis pour 3 ans, TIG, jours-amende, interdiction de conduire certains véhicules pendant 5 ans, stage de sécurité routière.\nIl y a également un retrait automatique de la moitié du nombre maximal de points."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur fait l’objet d’une rétention après un dépistage stupéfiants positif. Il refuse de remettre son permis malgré la mise en demeure de le restituer dans les 24 heures. Quelle infraction commet-il ?",
+        a: "Il commet l’infraction de refus de restituer un permis retenu.\nPeine encourue : 2 ans d’emprisonnement et 4 500 euros d’amende.\nPeines complémentaires possibles : TIG, jours-amende, suspension du permis pour 3 ans, annulation du permis avec interdiction de le repasser pendant 3 ans.\nIl y a également un retrait automatique de la moitié du nombre maximal de points."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur est contrôlé avec 0,52 mg/L d’air expiré. Son permis est retenu. Le préfet prend une décision de suspension administrative dans les délais. Quelle est l’issue de la rétention ?",
+        a: "La suspension peut durer jusqu’à 6 mois, voire jusqu’à 1 an selon la gravité du cas. La suspension administrative s’ajoute donc à une éventuelle suspension judiciaire.\nDans certains cas liés à l’alcool, le préfet peut aussi autoriser la conduite de véhicules équipés d’un éthylotest anti-démarrage."
+      },
+      {
+        type: "flashcard",
+        q: "Un APJA constate qu’un conducteur présente un état d’ivresse manifeste. Le conducteur refuse de se soumettre au dépistage alcoolique. L’APJA veut procéder lui-même à la rétention du permis. Peut-il le faire ?",
+        a: "Non, car les APJA ne peuvent mettre en œuvre la rétention que dans deux cas précis :\n1 : Excès de vitesse d’au moins 40 km/h.\n2 : Téléphone tenu en main avec contravention simultanée.\nPour les cas liés à l’alcool, seuls les OPJ et APJ peuvent procéder à la rétention. L’APJA doit donc faire appel à un OPJ ou à un APJ."
+      },
+      {
+        type: "flashcard",
+        q: "Un conducteur est contrôlé avec un taux de 0,48 mg/L d’air expiré. Le dépistage stupéfiants est également positif. Il présente son permis. Quelle est la durée maximale de rétention et quelles suites sont possibles ?",
+        a: "La rétention du permis est obligatoire. Elle peut être fondée à la fois sur l’alcoolémie délictuelle et sur le dépistage positif aux stupéfiants.\nLa durée maximale de rétention est de 120 heures, car des analyses médicales ou biologiques peuvent être nécessaires.\nLe préfet peut prendre une décision de suspension administrative dans ce délai. La suspension administrative peut atteindre 6 mois, voire 1 an selon la gravité.\n+IMMO, ou mise en fourrière."
+      },
+      {
+        type: "flashcard",
+        q: "Votre équipage contrôle un conducteur positif à l’alcool avec un taux de 0,41 mg/L d’air expiré. Le conducteur est seul dans la voiture et remet son permis. Quelle est la conduite à tenir complète ?",
+        a: "1 : Constater le cas de rétention : alcoolémie supérieure ou égale à 0,40 mg/L d’air expiré.\n2 : Retenir immédiatement le permis de conduire.\n3 : Rédiger un avis de rétention.\n4 : Remettre l’avis de rétention au conducteur.\n5 : Immobiliser le véhicule d’office, puisqu’aucun conducteur qualifié ne peut le reprendre.\n6 : Transmettre les éléments à l’autorité administrative.\n7 : Attendre la décision du préfet dans le délai applicable.\n8 : Le délai de rétention peut aller jusqu’à 120 heures en raison du cadre alcoolique.\n9 : Si le préfet prend une suspension administrative, le conducteur ne peut plus conduire pendant la durée fixée.\n10 : En l’absence de décision préfectorale dans le délai, le permis doit être remis à disposition du conducteur."
+      }
+    ]
+  },
+  immobilisation: {
+    name: "Immobilisation",
+    icon: "🅿️",
+    questions: [
+      {
+        q: "L’immobilisation implique que le véhicule :",
+        choices: ["Est placé sous la garde de l’administration", "Reste sous la garde du propriétaire ou conducteur", "Est automatiquement mis en fourrière", "Est saisi pénalement"],
+        answer: [1],
+        exp: "La réponse correcte est : Reste sous la garde du propriétaire ou conducteur"
+      },
+      {
+        q: "L’immobilisation se fait dès lors que le propriétaire est en :",
+        choices: ["Défaut de PC", "Défaut d’ass", "Conduite sous stup", "CEEA", "Non-respect des distances de sécurités", "Excès de plus de 49KM/H", "Entrave à la circulation", "Klaxon injustifié", "Refus d’obtempérer"],
+        answer: [0,1,2,3,4,5,6,7,8],
+        exp: "Les réponses correctes sont : Défaut de PC, Défaut d’ass, Conduite sous stup, CEEA, Non-respect des distances de sécurités, Excès de plus de 49KM/H, Entrave à la circulation, Klaxon injustifié, Refus d’obtempérer"
+      },
+      {
+        q: "Concernant le véhicule, l’immobilisation se fait dans les cas suivants :",
+        choices: ["Défaut de contrôle technique", "Non-respect des normes d’immatriculations", "Défaut de pare-brise", "Pare brise ou vitre latérale opaque", "Véhicule représentant un danger du fait de son mauvais état", "Véhicule assimilé à une épave"],
+        answer: [0,1,2,3,4],
+        exp: "Les réponses correctes sont : Défaut de contrôle technique, Non-respect des normes d’immatriculations, Défaut de pare-brise, Pare brise ou vitre latérale opaque, Véhicule représentant un danger du fait de son mauvais état"
+      },
+      {
+        q: "L’immobilisation est prescrite lorsque :",
+        choices: ["L’infraction est déjà jugée", "L’agent estime qu’elle pourrait exister", "L’infraction cesse", "Le conducteur conteste"],
+        answer: [2],
+        exp: "La réponse correcte est : L’infraction cesse"
+      },
+      {
+        q: "La fiche d’immobilisation est établie lorsque :",
+        choices: ["L’infraction a cessé immédiatement", "L’infraction persiste au départ de l’agent", "Le conducteur est absent uniquement", "Le véhicule est neuf"],
+        answer: [1],
+        exp: "La réponse correcte est : L’infraction persiste au départ de l’agent"
+      },
+      {
+        q: "Concernant l’autorisation du procureur :",
+        choices: ["Elle doit obligatoirement être écrite", "Elle peut être verbale ou écrite", "Elle est obtenue", "Elle intervient après immobilisation uniquement", "Elle est actée en procédure avec le nom du magistrat"],
+        answer: [1,4],
+        exp: "Les réponses correctes sont : Elle peut être verbale ou écrite, Elle est actée en procédure avec le nom du magistrat"
+      },
+      {
+        q: "Lors de l’immobilisation sur décision du préfet, il…",
+        choices: ["Doit toujours prendre un arrêté", "Peut autoriser par tout moyen", "N’intervient jamais", "Ne peut pas être saisi par les policiers"],
+        answer: [1],
+        exp: "La réponse correcte est : Peut autoriser par tout moyen"
+      },
+      {
+        q: "En l’absence du conducteur :",
+        choices: ["L’immobilisation est impossible", "Le véhicule est saisi", "Un sabot peut être posé", "Le véhicule est détruit"],
+        answer: [2],
+        exp: "La réponse correcte est : Un sabot peut être posé"
+      },
+      {
+        q: "Les APJA peuvent :",
+        choices: ["Inscrire directement l’immobilisation au SIV", "Lever les immobilisations qu’ils ont prescrites", "Refuser toute immobilisation", "Saisir un véhicule"],
+        answer: [1],
+        exp: "La réponse correcte est : Lever les immobilisations qu’ils ont prescrites"
+      },
+      {
+        q: "Le remplacement du conducteur est :",
+        choices: ["Interdit", "Possible dans certains cas", "Obligatoire", "Réservé au préfet"],
+        answer: [1],
+        exp: "La réponse correcte est : Possible dans certains cas"
+      },
+      {
+        q: "L’immobilisation préfectorale intervient pour les cas suivants :",
+        choices: ["Infraction pour laquelle la peine de confiscation du véhicule est obligatoirement encourue", "Permis ne correspondant à la catégorie de véhicule conduit/ possédé", "CEEA/ivresse manifeste", "Usage stup.", "Refus de se soumettre aux vérifications pour les cas ci-dessus", "Dépassement de 49 km/h ou plus de la vitesse maximale autorisée", "Dépôts sauvages d'ordures", "Refus d’op", "Dépassement de 50km/h ou plus de la vitesse maximale autorisée", "Rodéo motorisé"],
+        answer: [0,1,2,3,4,6,7,8],
+        exp: "Les réponses correctes sont : Infraction pour laquelle la peine de confiscation du véhicule est obligatoirement encourue, Permis ne correspondant à la catégorie de véhicule conduit/ possédé, CEEA/ivresse manifeste, Usage stup., Refus de se soumettre aux vérifications pour les cas ci-dessus, Dépôts sauvages d'ordures, Refus d’obtempérer, Dépassement de 50 km/h ou plus de la vitesse maximale autorisée"
+      },
+      {
+        q: "La fiche de circulation provisoire :",
+        choices: ["Est valable 48h", "Est facultative", "Peut dépasser 7 jours", "Ne peut pas dépasser 7 jours"],
+        answer: [3],
+        exp: "La réponse correcte est : Ne peut pas dépasser 7 jours"
+      },
+      {
+        q: "Un véhicule immatriculé à l’étranger :",
+        choices: ["Suit les mêmes règles", "Suit des règles différentes", "Ne peut être immobilisé", "Est automatiquement saisi"],
+        answer: [0],
+        exp: "La réponse correcte est : Suit les mêmes règles"
+      },
+      {
+        q: "Qui détermine la dangerosité réelle du véhicule ?",
+        choices: ["Le policier", "Le conducteur", "L’expert automobile", "Le préfet"],
+        answer: [2],
+        exp: "La réponse correcte est : L’expert automobile"
+      },
+      {
+        q: "Une immobilisation ne peut être maintenue :",
+        choices: ["Plus de 7 jours", "Après cessation de l’infraction", "Sans accord du conducteur", "Sans PV"],
+        answer: [1],
+        exp: "La réponse correcte est : Après cessation de l’infraction"
+      },
+      {
+        q: "Si le procureur ne confirme pas sous 7 jours :",
+        choices: ["L’immobilisation devient définitive", "Elle est transformée en fourrière", "Elle est levée", "Elle est prolongée"],
+        answer: [2],
+        exp: "La réponse correcte est : Elle est levée"
+      },
+      {
+        q: "L’immobilisation préfectorale est levée si :",
+        choices: ["L’auteur n’est pas le propriétaire", "Le conducteur est mineur", "Le véhicule est une épave", "Le véhicule est assuré"],
+        answer: [0],
+        exp: "La réponse correcte est : L’auteur n’est pas le propriétaire"
+      },
+      {
+        q: "Après 48h sans régularisation :",
+        choices: ["L’immobilisation cesse", "Une amende est annulée", "Le véhicule est restitué", "L’immobilisation peut devenir une mise en fourrière"],
+        answer: [3],
+        exp: "La réponse correcte est : L’immobilisation peut devenir une mise en fourrière"
+      },
+      {
+        q: "La mise en fourrière correspond :",
+        choices: ["À la confiscation définitive du véhicule", "Au transfert du véhicule dans un lieu désigné par l’autorité administrative ou judiciaire", "À une immobilisation temporaire uniquement", "À une saisie douanière"],
+        answer: [1],
+        exp: "La réponse correcte est : Au transfert du véhicule dans un lieu désigné par l’autorité administrative ou judiciaire"
+      },
+      {
+        q: "Qui peut prescrire une mise en fourrière à la suite d’une infraction ?",
+        choices: ["Un OPJ", "Un APJA", "Un maire", "Un APJ sous contrôle de l’OPJ", "Toutes ces réponses selon les cas"],
+        answer: [4],
+        exp: "La réponse correcte est : Toutes ces réponses selon les cas"
+      },
+      {
+        q: "Le commencement d’exécution de la mise en fourrière est caractérisé lorsque :",
+        choices: ["Le dépanneur arrive sur place", "Le procès-verbal est signé", "Deux roues ont quitté le sol", "Le conducteur quitte les lieux"],
+        answer: [2],
+        exp: "La réponse correcte est : Deux roues ont quitté le sol"
+      }
+    ]
+  },
+  mise_en_fourriere: {
+    name: "Mise en fourrière",
+    icon: "🚚",
+    questions: [
+      {
+        type: "flashcard",
+        q: "Le syndic d’une résidence appelle le commissariat pour un véhicule présent depuis plusieurs semaines dans un parking privé souterrain. Le syndic connaît l’identité du propriétaire et souhaite un enlèvement immédiat. Que faire ?",
+        a: "Le parking étant un lieu privé où le Code de la route ne s’applique pas forcément, les policiers doivent d’abord vérifier le statut exact du lieu. La procédure applicable est celle dite du “maître des lieux”. Le syndic ne peut pas obtenir immédiatement l’enlèvement.\nAvant toute mise en fourrière, 2 choses à faire : le syndic doit adresser au propriétaire une mise en demeure par LRAR + cette mise en demeure doit laisser un délai de 8 jours pour retirer le véhicule.\nL’OPJ territorialement compétent vérifie : l’identité du propriétaire ; la réalité du stationnement sans droit ; la régularité de la procédure préalable.\nCe n’est qu’à l’issue du délai légal et après vérifications que l’OPJ pourra prescrire la mise en fourrière."
+      },
+      {
+        type: "flashcard",
+        q: "Une BAC interpelle un conducteur après un refus d’obtempérer aggravé. Le conducteur est alcoolisé et le véhicule lui appartient. Le parquet demande la mise en fourrière dans une procédure où la confiscation du véhicule est encourue. Au moment de l’enlèvement, le mis en cause devient agressif et empêche le départ du dépanneur. Qu’en pensez-vous ?",
+        a: "Le refus d’obtempérer aggravé fait partie des infractions permettant la mise en fourrière dans le cadre d’une confiscation encourue. Dans ce cadre : seuls les OPJ ou APJ agissant avec autorisation préalable du parquet peuvent agir et les APJA ne sont pas compétents.\nLe véhicule est placé en fourrière jusqu’à la décision définitive de la juridiction. Lorsque l’intéressé s’oppose physiquement : interpellation + caractérisation du délit d’obstacle à une mise en fourrière.\nUn compte rendu immédiat est transmis à l’OPJ et au parquet."
+      },
+      {
+        type: "flashcard",
+        q: "Des riverains signalent un véhicule accidenté présent depuis plusieurs jours sur la voie publique. Le véhicule est sans roues avant, sans pare-brise et sans plaques. Que faites-vous ?",
+        a: "Les policiers doivent déterminer si le véhicule est simplement dégradé ou constitue juridiquement une épave assimilable à un déchet. L’absence de plaques et d’éléments d’identification permettent de dire que c’est une épave. Dans ce cas :\n- La procédure classique de mise en fourrière peut ne plus être adaptée ;\n- Le maire peut agir sur le fondement du Code de l’environnement.\n→ Constat de l’état du véhicule, recherche numéros d’identification, rendre compte.\n→ Si le propriétaire est inconnu : l’enlèvement d’office ; le véhicule peut être orienté vers destruction."
+      },
+      {
+        type: "flashcard",
+        q: "Lors d’un contrôle, un conducteur belge est verbalisé pour un grand excès de vitesse. Il ne peut justifier ni d’un domicile en France ni du paiement immédiat de l’amende. Que faites-vous ?",
+        a: "La situation entre dans le cadre de la consignation applicable aux conducteurs ne présentant pas de garanties de paiement en France. Constat infraction, vérification identité et documents du conducteur, paiement immédiat ou consignation. Si refus : l’OPJ peut prescrire la mise en fourrière et le véhicule est transféré vers un lieu de garde.\nFiche descriptive, notifier mesure.\nLe véhicule ne pourra être récupéré qu’après régularisation de la situation financière et obtention de la mainlevée."
+      },
+      {
+        type: "flashcard",
+        q: "Une patrouille découvre un véhicule signalé volé portant de fausses plaques étrangères. Que faites-vous ?",
+        a: "Ici, les fausses plaques permettent une procédure de mise en fourrière décidée uniquement par un OPJ territorialement compétent ou avec son accord exprès. Le véhicule est enregistré dans le SI Fourrières avec le motif “vol dédié”."
+      },
+      {
+        type: "flashcard",
+        q: "Quelle est la définition juridique de la mise en fourrière ?",
+        a: "La mise en fourrière est le transfert d’un véhicule dans un lieu désigné par l’autorité administrative ou judiciaire afin d’y être retenu jusqu’à décision de cette autorité, aux frais du propriétaire."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les principales situations permettant une mise en fourrière ?",
+        a: "* Suite à une infraction prévue par le Code de la route ;\n* Suite à une immobilisation ;\n* Véhicule laissé sans droit ;\n* Véhicule privé d’éléments indispensables ;\n* Procédure de consignation ou d’amende forfaitaire majorée ;\n* Infractions pour lesquelles la confiscation est encourue."
+      },
+      {
+        type: "flashcard",
+        q: "Avant toute mise en fourrière, quelles vérifications doivent être effectuées ?",
+        a: "* Vérifier si le véhicule est volé ;\n* Vérifier que l’infraction permet la mise en fourrière ;\n* Vérifier la régularité de la constatation ;\n* Vérifier si le véhicule est une épave ;\n* Vérifier le lieu de stationnement et l’application du Code de la route."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles autorités peuvent prescrire une mise en fourrière ?",
+        a: "* OPJ ;\n* APJ dans certains cas ;\n* APJA chef de police municipale ;\n* Maire dans certains cas particuliers ;\n* Préfet dans les cas prévus par le Code de la route."
+      },
+      {
+        type: "flashcard",
+        q: "Que contient le registre de mise en fourrière ?",
+        a: "* Date et heure\n* Identité du propriétaire\n* Immatriculation\n* État du véhicule\n* Accessoires apparents\n* Identité de l’agent"
+      },
+      {
+        type: "flashcard",
+        q: "Dans quels cas l’autorisation préalable du PR est-elle obligatoire pour que le VL soit mis en fourrière ?",
+        a: "Lorsqu’il s’agit d’un délit ou d’une contravention de 5e classe pour lesquels la confiscation du véhicule est encourue."
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est-ce qu’une fiche descriptive ?",
+        a: "C’est une fiche qui permet de constater l’état apparent du véhicule avant enlèvement et éviter toute contestation ultérieure. Examen sommaire extérieur et intérieur, sans ouvrir le VL."
+      },
+      {
+        type: "flashcard",
+        q: "Dans quel cas le propriétaire peut-il garder son véhicule à domicile ?",
+        a: "Lorsque le propriétaire réside dans le ressort de l’OPJ ayant prescrit la mesure et après retrait du certificat d’immatriculation."
+      },
+      {
+        type: "flashcard",
+        q: "Quelle différence entre frais d’opérations préalables et frais d’enlèvement ?",
+        a: "* Opérations préalables : déplacement du dépanneur ;\n* Frais d’enlèvement : enlèvement effectif du véhicule."
+      },
+      {
+        type: "flashcard",
+        q: "Quand y a-t-il commencement d’exécution ?",
+        a: "* Lorsque deux roues ont quitté le sol ;\n* Ou dès le début du déplacement du véhicule vers la fourrière."
+      },
+      {
+        type: "flashcard",
+        q: "Quelle infraction est constituée en cas d’opposition à l’enlèvement ?",
+        a: "Le délit d’obstacle à un ordre d’envoi en fourrière."
+      },
+      {
+        type: "flashcard",
+        q: "Pourquoi enregistrer chaque mise en fourrière ?",
+        a: "Pour assurer la traçabilité de la procédure et le suivi du véhicule."
+      },
+      {
+        type: "flashcard",
+        q: "Que pouvez-vous me dire de la notification de mise en fourrière ?",
+        a: "* Dans 5 jours ouvrables\n* Par lettre recommandée avec accusé de réception\n* Si gage, notifier au créancier gagiste également"
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est-ce que la mainlevée ?",
+        a: "La décision mettant fin à la mise en fourrière et autorisant la restitution du véhicule."
+      },
+      {
+        type: "flashcard",
+        q: "Qui peut prononcer la mainlevée de la mise en fourrière ?",
+        a: "* L’autorité ayant prescrit la mesure ;\n* L’OPJ chargé de son exécution."
+      },
+      {
+        type: "flashcard",
+        q: "Quand un véhicule est-il considéré comme abandonné ?",
+        a: "Lorsque le propriétaire ne le récupère pas dans le délai légal après notification."
+      },
+      {
+        type: "flashcard",
+        q: "Quel est le point de départ du délai d’abandon et ses délais ?",
+        a: "La notification de mise en fourrière.\n* 10 jours : destruction ;\n* 15 jours : remise aux domaines ;\n* 7 jours : rodéo urbain si VL non identifiés alors considérés comme abandonnés dès leur entrée en fourrière et détruits."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les grandes étapes de la procédure de mise en fourrière ?",
+        a: "1. Constatation de la situation ;\n2. Vérifications préalables ;\n3. Prescription de la mesure ;\n4. Rédaction PV ou rapport ;\n5. Fiche descriptive ;\n6. Enlèvement ;\n7. Enregistrement/SIF ;\n8. Notification ;\n9. Transmission des actes ;\n10. Mainlevée ou abandon/destruction."
+      },
+      {
+        type: "flashcard",
+        q: "Différence entre immobilisation, mise en fourrière et confiscation ?",
+        a: "* Immobilisation : interdiction temporaire de circuler, sous la garde du propriétaire ;\n* Mise en fourrière : transfert et garde du véhicule par le gardien ;\n* Confiscation : retrait définitif prononcé par une juridiction pénale."
+      }
+    ]
+  },
+  amende_consignation: {
+    name: "Amende et consignation",
+    icon: "💳",
+    questions: [
+      {
+        type: "flashcard",
+        q: "Qu’est-ce que l’amende pénale ?",
+        a: "C’est une condamnation de la justice, peine complémentaire, qui peut concerner toutes les infractions."
+      },
+      {
+        type: "flashcard",
+        q: "Quel est le montant max en euros d’une amende pour rester dans le champ contraventionnel ?",
+        a: "3000 euros."
+      },
+      {
+        type: "flashcard",
+        q: "Combien existe-t-il de classes d’amendes ?",
+        a: "5."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les spécificités de l’amende forfaitaire ?",
+        a: "• Dans le cadre du Code de la Route\n• Elle s'applique aux contraventions des quatre premières classes et certaines contraventions de cinquième classe\n• Elle n'est pas applicable en cas de constatation simultanée de plusieurs infractions dont l'une au moins ne peut donner lieu à une amende forfaitaire\n• Elle donne lieu à la délivrance d'un avis de contravention et d'une carte de paiement\n• Elle est applicable aux mineurs de plus de 13 ans"
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les trois phases de l’amende forfaitaire ?",
+        a: "Amende forfaitaire minorée : 15 jours, 30 jours si télépaiement.\nAmende forfaitaire ordinaire : 45 jours + 15 jours si télépaiement.\nAmende forfaitaire majorée : au-delà du délai de 60 jours l’amende est forcément majorée. Passé un délai de 4 mois, si l’auteur de l’infraction est également proprio du VL, le TRESOR PUBLIC a possibilité de le gager."
+      },
+      {
+        type: "flashcard",
+        q: "Dans le domaine routier l’AFD peut être mise en place pour quelles infractions ?",
+        a: "1• Conduite d'un véhicule sans permis\n2• Conduite d'un véhicule avec un permis de conduire d'une catégorie n'autorisant pas sa conduite\n3• Conduite d'un véhicule terrestre à moteur sans assurance"
+      },
+      {
+        type: "flashcard",
+        q: "Concernant les voies de recours quels sont les délais ?",
+        a: "45 jours pour les minorées et les ordinaires.\n30 jours pour une amende majorée."
+      },
+      {
+        type: "flashcard",
+        q: "A la suite du recours du contrevenant le ministère public peut :",
+        a: "- CLASSER SANS SUITE\n- SAISIR LE TRIBUNAL par voie d'ordonnance pénale\n- CITER LE CONTREVENANT devant le Tribunal de Police"
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est-ce que l’ordonnance pénale ?",
+        a: "C’est une procédure simplifiée pour condamner à une peine d’amende sans passer en comparution devant le tribunal."
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est-ce que la citation directe devant le T.P ?",
+        a: "Contrevenant convoqué via huissier pour les contraventions ne pouvant faire l’objet de la procédure de l’amende forfaitaire ou quand le choix de l’ordonnance pénale a été écartée."
+      },
+      {
+        type: "flashcard",
+        q: "Que signifie l’acronyme du boîtier M POS et quelles sont ses spécificités ?",
+        a: "Mobile Point of Sale relié en Bluetooth au NEO pour payer les amendes des 5 classes de contraventions y compris les AFD. 50 euros sans contact."
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les autres moyens pour un contrevenant pour payer en dehors de sa CB ?",
+        a: "Chèque, espèces, paiement en ligne."
+      },
+      {
+        type: "flashcard",
+        q: "Via l’application PVE quels sont les trois possibilités d’options de paiement ?",
+        a: "PAIEMENT DIFFERE\nLA CONSIGNATION\nPAIEMENT IMMEDIAT"
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est-ce que la consignation ?",
+        a: "Le versement d'une somme d'argent intervenant en garantie de paiement des condamnations pécuniaires par l'auteur d'une ou plusieurs infractions aux conditions administratives de circulation des véhicules.\nPour les français ou étrangers, infractions routières délit et contraventions."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les conditions ?",
+        a: "Une personne ne peut ni justifier d'un domicile ou d'un emploi sur le territoire français ni justifier d'une caution agréée par l'administration."
+      },
+      {
+        type: "flashcard",
+        q: "Pour quels champs d’infractions ?",
+        a: "- Au code de la route, délits et contraventions ;\n- À la réglementation des transports routiers, aux transports de matières dangereuses ;\n- Aux conditions de travail dans les transports routier."
+      },
+      {
+        type: "flashcard",
+        q: "Quelle est la procédure ?",
+        a: "Si les conditions de la consignation sont respectées, l’agent contact le PROC qui décide sous 24h le paiement par chèque espèce numéraire, quittance et verbalisation.\nSi refus immobilisation du VL et fourrière, avis PROC, le contrevenant peut décider ne payer qu’au TRESOR PUBLIC dans ce cas immobilisation du VL."
+      },
+      {
+        type: "flashcard",
+        q: "Important : autant de consignations que de contraventions mais si concours de délits une seule consignation possible, laquelle ?",
+        a: "La plus élevée."
+      }
+    ]
+  },
+  ceea_cei_stup: {
+    name: "CEEA CEI STUP",
+    icon: "🧪",
+    questions: [
+      {
+        type: "flashcard",
+        q: "Quels sont les trois types de dépistages alcooliques ?",
+        a: "1 : Le dépistage obligatoire.\nIl concerne les accidents corporels/mortels, et infractions entraînant une suspension du PC.\n2 : Le dépistage facultatif.\nIl peut être réalisé pour tout type d’accident, pour toute infraction au Code de la route, et infractions au CR n’entraînant pas la suspension du PC.\n3 : Le dépistage préventif.\nIl peut être réalisé à l’initiative de l’OPJ, de l’APJ ou du procureur de la République."
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les deux types d’éthylotests ?",
+        a: "1 : L’éthylotest de type A, qui est jetable.\n2 : L’éthylotest de type B, qui est réutilisable."
+      },
+      {
+        type: "flashcard",
+        q: "Un APJA peut-il faire une vérification alcoolique ?",
+        a: "Non. Seuls les OPJ et les APJ peuvent procéder à une vérification alcoolique."
+      },
+      {
+        type: "flashcard",
+        q: "Comment s’appelle le contrôle d’homologation des appareils de vérification ?",
+        a: "Il s’agit d’un contrôle métrologique."
+      },
+      {
+        type: "flashcard",
+        q: "Quelle est la procédure de vérification alcoolique ?",
+        a: "Il faut prendre deux mesures.\nOn retient le taux le plus faible, puis on soustrait la marge d’erreur."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles fiches doivent être remplies en cas de CEEA ? Par qui ?",
+        a: "La fiche A est remplie par la police.\nLes fiches B et C sont remplies par le médecin."
+      },
+      {
+        type: "flashcard",
+        q: "Combien de points sont retirés en cas de CEEA ou de CEI ?",
+        a: "6 points sont retirés."
+      },
+      {
+        type: "flashcard",
+        q: "Combien de points sont retirés en cas d’alcool et de stupéfiants ?",
+        a: "9 points sont retirés."
+      },
+      {
+        type: "flashcard",
+        q: "Quel est le taux légal pour un permis probatoire ?",
+        a: "Le taux légal pour un permis probatoire est de 0,10 mg par litre d’air EXPRIMÉ."
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les trois types de dépistage de stupéfiants ?",
+        a: "1 : Le dépistage obligatoire.\nIl concerne les accidents corporels et les accidents mortels.\n2 : Le dépistage facultatif.\nIl peut être réalisé pour tout accident et pour toute infraction, ou si soupçon usage stup.\n3 : Le dépistage préventif.\nIl peut être réalisé à l’initiative de l’OPJ, de l’APJ ou du procureur de la République."
+      },
+      {
+        type: "flashcard",
+        q: "Que risque-t-on en cas de contrôle stupéfiants et/ou alcool positif, en dehors de la contravention ou de la peine délictuelle ?",
+        a: "· La rétention du PC\n· La suspension du PC : une décision du préfet dans un délai de 72 heures à 120 heures.\n· L’immobilisation du véhicule.\n· La mise en fourrière sur autorisation préalable du préfet, et dont le Procureur aura 7 jours pour valider.\n· La confiscation judiciaire du véhicule autorisé par le Procureur"
+      }
+    ]
+  },
+  avp_accident_circulation: {
+    name: "AVP, accident de la circulation",
+    icon: "🚑",
+    questions: [
+      {
+        type: "flashcard",
+        q: "Quels sont les trois éléments de l’accident corporel de la circulation ?",
+        a: "- Victime d’un fait involontaire\n- Voie ouverte à la circulation publique\n- Implication d’au moins un véhicule"
+      },
+      {
+        type: "flashcard",
+        q: "Quelle est la classification des usagers en matière d’AVP ?",
+        a: "- Indemnes : impliqué, non décédé, dont l’état ne nécessite aucun soin médical\n- Victimes : personne impliquée, non indemne\nParmi les victimes :\n- Tués : personne décédée d’un AVP jusque dans les 30 jours suivants\n- Blessé hospitalisé : victime admise comme patient dans un hôpital plus de 24h\n- Blessé léger : victime ayant fait l’objet de soins médicaux, n’ayant pas été admise comme patient à l’hôpital plus de 24h\n- Blessés : victime non décédée, ayant reçu des soins médicaux, même blessure mineure"
+      },
+      {
+        type: "flashcard",
+        q: "Un acte médical, examen médical, scanner, IRM, etc, est-il toujours un soin ?",
+        a: "Non, en l’absence totale de blessure révélée, c’est une levée de doute donc pas considéré comme blessé."
+      },
+      {
+        type: "flashcard",
+        q: "Faut-il nécessairement une ITT pour être considéré blessé ?",
+        a: "Non, certains blessés n’ont pas d’ITT. MAIS une personne avec ITT sera toujours considérée blessée."
+      },
+      {
+        type: "flashcard",
+        q: "Peut-il y avoir un blessé dans un accident matériel de la circulation ?",
+        a: "Non, les impliqués sont tous indemnes."
+      },
+      {
+        type: "flashcard",
+        q: "Définition informelle de l’ITT",
+        a: "Incapacité Totale de Travail. Durée pendant laquelle une victime éprouve une gêne notable dans les actes de la vie courante."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les causes de l’AVP ?",
+        a: "- Vitesse\n- Alcool\n- Stupéfiants\n- Autres : inattention, négligence, violation d’une règle de sécurité, imprudence"
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les diligences de l’APJ sur un AVP corporel, 10 étapes ?",
+        a: "- Périmètre de sécurité, faciliter l’arrivée et l’intervention des secours\n- Réguler la circulation\n- Préserver les traces et indices\n- Maintenir les témoins à disposition de l’OPJ et/ou relever leurs coordonnées, tph, mail, adresse, localisation lors des faits, prise de déclarations manuscrites sur feuillet approprié annexé à la procédure ou joint au rapport PROCEA\n- Interpeller l’auteur de l’infraction pour mise à disposition à l’OPJ, s’il y a lieu\n- Dépistage de l’imprégnation alcoolique, DIA, et prélèvement sanguin systématique en cas de résultat positif. Nécessite une réquisition par OPJ ou APJ, R. 235-2 CR\n- Dépistage salivaire stups. Positif => prélèvement sanguin systématique, selon le même mode opératoire que pour l’alcool\n- Rédaction du PROCEA qui servira de PV transport-constat. Plan obligatoire\n- Si dégât au domaine public, contacter la voirie pour une intervention\n- Prévenir la Préfecture ou élu selon la gravité de l’accident, pour prévoir une déviation, fermeture d’axe, etc."
+      },
+      {
+        type: "flashcard",
+        q: "L’OPJ doit-il se rendre sur place en cas d’accident corporel ?",
+        a: "Seulement obligatoire pour les accidents corporels graves, critère : pronostic vital engagé ou très engagé."
+      },
+      {
+        type: "flashcard",
+        q: "Diligences de l’OPJ sur un AVP corporel, 8 étapes ?",
+        a: "- Avis Parquet\n- En cas d’accident mortel, ou si le pronostic vital est engagé, l’opportunité du placement en GAV et le choix du début de cette mesure sont à déterminer avec le PR\n- Récupérer le certificat de décès en cas d’AVP mortel\n- Contexte d’accident grave / mortel avec CEEA, CEI ou stups : rétention obligatoire de PC\n- Constatations en cas de décès. Etablit le déroulement des faits et les responsabilités\n- En cas d’enquête de voisinage : récupérer les vidéos, centre de supervision urbain, SNCF\n- Selon les services, faire appel au service d’identité judiciaire pour constitution d’un album photographique\n- Réquisitions judiciaires"
+      },
+      {
+        type: "flashcard",
+        q: "Sur quoi portent les constatations techniques ?",
+        a: "Les lieux : chaussée, localisation du lieu, vidéosurveillance, conditions climatiques, conditions de luminosité, conditions de circulation, immatriculation, fichiers, état des VL, directions et trajectoires, objets, débris, traces de freinages, traces papillaires.\nLes personnes : validité du PC, identité, CNI, description vestimentaire des piétons impliqués, constatations sur le corps."
+      },
+      {
+        type: "flashcard",
+        q: "Comment effectuer l’avis famille ?",
+        a: "- Intervenir à plusieurs\n- Déterminer la personne qui fait l’annonce\n- Choisir un lieu adéquat\n- Privilégier la position assise\n- Contact SP si nécessaire\n- Ne pas amplifier la situation\n- Langage clair, pas de malentendu ou de faux espoir\n- Laisser le temps aux personnes de réagir\n- Ne jamais laisser une personne seule"
+      },
+      {
+        type: "flashcard",
+        q: "Pour quelles catégories de personnes faire un avis famille ?",
+        a: "- Personnes DCD\n- Personnes grièvement blessées\n- Mineurs"
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les investigations à réaliser ultérieurement ?",
+        a: "- Exploitation des différentes réquisitions, assurance, téléphonie, Météo France, AGIRA, etc\n- Exploitation des vidéos\n- Fichiers de police\n- Enquête de voisinage : par voie de presse, d’affichage, de géolocalisation des TPH à proximité, SMS d’appels à témoins, réseaux sociaux\n- E-CALL 112 : dispositif automatique équipant certains VH, permet de déterminer l’heure exacte du choc\n- En cas de déclenchement airbag : le logiciel enregistre l’heure du choc et la vitesse"
+      },
+      {
+        type: "flashcard",
+        q: "Quel logiciel utiliser pour faciliter les indemnisations par les assurances ?",
+        a: "TransPV."
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est-ce qu’une fiche BAAC ?",
+        a: "Bulletin d’Analyse d’Accident Corporel.\nUne fiche décrivant l’accident, caractéristiques, lieu, VH impliqués, usagers, inscrite au fichier BAAC, qui donne l’état de l’insécurité routière au niveau national.\nRédigée par les FDO et transmise impérativement dans les 2 mois suivant l’accident."
+      },
+      {
+        type: "flashcard",
+        q: "Les principales infractions routières ?",
+        a: "- Homicide routier / homicide involontaire\n- Blessure routière / involontaire avec ITT supérieure à 3 mois\n- Blessure routière / involontaire avec ITT inférieure à 3 mois"
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les conditions à réunir pour qualifier un homicide routier ?",
+        a: "Plusieurs conditions. VH terrestre à moteur + mort non intentionnelle + une des circonstances suivantes :\n- Manquement délibéré à une obligation de prudence ou de sécurité\n- CEEA/ CEI/refus vérif\n- Stups/refus de vérif\n- Consommation volontaire, détournée, excessive de substances psychoactives\n- Défaut de permis, ou annulation, suspension, rétention, invalidité\n- Excès 30kmH\n- Délit de fuite\n- Usage du tph, port d’oreillettes\n- Refus d’obtempérer"
+      },
+      {
+        type: "flashcard",
+        q: "Définition du délit de fuite ?",
+        a: "Le fait, pour tout conducteur d'un véhicule ou engin terrestre, fluvial ou maritime, sachant qu'il vient de causer ou d'occasionner un accident, de ne pas s'arrêter et de tenter ainsi d'échapper à la responsabilité pénale ou civile qu'il peut avoir encourue."
+      },
+      {
+        type: "flashcard",
+        q: "A partir de combien de jours d’ITT un AVP par conducteur de VH à moteur devient délictuel ?",
+        a: "1 jour d’ITT."
+      },
+      {
+        type: "flashcard",
+        q: "A partir de combien de jours d’ITT un AVP causé par piéton ou cycliste auteur de blessures involontaires devient délictuel ?",
+        a: "A partir de 3 mois d’ITT si un manquement délibéré à une obligation de prudence a été commis."
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les cas où l’officier doit se déplacer ?",
+        a: "Plan nombreuses victimes, plan NoVi ; policiers impliqués ; personne connue ; impact média."
+      },
+      {
+        q: "Le CODIS, régul SAMU, CIC, Centre opérationnel de GN se répercutent l’appel d’alerte, quels éléments doivent impérativement figurer dans le contenu de l’alerte ?",
+        choices: ["Le montant des dégâts matériels", "L’heure et la localisation du sinistre", "Le nombre présumé de victimes", "L’identité du maire de la commune", "La nature du sinistre", "Les autorités sur place", "Les coordonnées du requérant"],
+        answer: [1,2,4,6],
+        exp: "Les réponses correctes sont : L’heure et la localisation du sinistre, Le nombre présumé de victimes, La nature du sinistre, Les coordonnées du requérant"
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les deux points primordiaux à recueillir lors de la réception d’une alerte AVP ?",
+        a: "Localisation du sinistre et description de son environnement, compétence.\nNombre présumé de victimes, indicateur plan NOVI, et les blessures."
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les points essentiels pour analyser une crise ?",
+        a: "Bilan humain : nombre de victime, état des victimes.\nQui ? : personnalités, policiers, gendarmes impliqués, récupérer arme, néo, carte pro, GB, avis.\nComment ? : type de VL, matières dangereuses, risque incendiaire.\nQuoi ? : accident mortel, corporel grave.\nQuand ? : jour/nuit, période scolaire, semaine/weekend, jour férié ? conditions climatiques, contexte.\nOù ? : compétence territoriale zone urbaine ou rurale."
+      },
+      {
+        type: "flashcard",
+        q: "Lors de la prise en compte des lieux, détailler la mise en place du dispositif ?",
+        a: "- Sectorisation : délimitation à l’aide d’un plan\n- Détermination moyens, effectifs, mission, rôles\n- Dispositif de circulation, demander une conférence dédiée si nécessaire auprès de notre CIC\n- Dispositif judiciaire : 1 OPJ qui dirige l’ensemble, un seul est chargé de l’enquête"
+      },
+      {
+        type: "flashcard",
+        q: "À qui l’officier doit rendre compte ?",
+        a: "N +1\nCIPN, centre d’information de la PN\nLe parquet\nAttention : le CIC se charge d’aviser le préfet et le DDPN après que l’avis au commissaire ait été effectué."
+      },
+      {
+        type: "flashcard",
+        q: "Que signifie l’acronyme ORSEC ?",
+        a: "Organisation de la réponse de sécurité civile."
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est-ce qu’un plan NOVI et dans quels cas un plan NOVI peut-il être déclenché ?",
+        a: "NOVI = nombreuses victimes = c’est un type de plan ORSEC.\nCas :\n- incendie de grande intensité entraînant des risques immédiats pour la population\n- accident du trafic routier, ferroviaire, ou aérien\n- actes criminels, attentat, prise d’otages\n- catastrophes naturelles ou technologiques\nNota = c’est un principe d’évacuation non immédiate des victimes = victimes dirigées vers un Poste médical avancé, PMA, installé sur les lieux = tri entre les blessés et les morts."
+      },
+      {
+        type: "flashcard",
+        q: "Quelle différence faites-vous entre le COS et le COP sur un AVP ?",
+        a: "Binôme opérationnel → poste de commandement.\nAction du COS, menant.\nAction du COP, concourant, notre rôle, doit être identifiable.\nÉteindre incendie, baliser.\nCouper la circulation, dévier.\nDésincarcérer, extraire.\nSécuriser les biens, identifier les victimes.\nÉvacuer les victimes.\nEscorter les secours.\nMission du COP : enquête.\nMission du COS : sauvetage."
+      },
+      {
+        q: "Qui prime en cas d’urgence vitale ?",
+        choices: ["Le COP", "Le COS", "Le maire", "Le préfet"],
+        answer: [1],
+        exp: "La réponse correcte est : Le COS"
+      },
+      {
+        type: "flashcard",
+        q: "Détaillez les actions de l’OPJ lorsqu’il débute son enquête, attention il y a un protagoniste qui doit faire l’objet d’un traitement spécifique !",
+        a: "Protéger traces/indices, constatations, scellés, ID témoins, évacuer VL placés sous scellés, rendre compte proc, rendre compte hiérarchie.\nATTENTION : si conducteur blessé = responsable de l’accident = placé GAV prévoir collègues escorter secours HP."
+      },
+      {
+        type: "flashcard",
+        q: "Que faites-vous si un fonctionnaire est victime d’un AVP grave ?",
+        a: "- Avis hiérarchique OBLIGATOIRE\n- Déplacement obligatoire du chef de service\n- Avis CIPN ou état-major\n- Télégramme\n- Inciter le fonctionnaire victime à déposer plainte\n- Avis parquet\n- Procédure judiciaire : transport, constatations, sollicitation de la PTS\n- Mise en place d’un dispositif de sécurité dans la zone des faits\n- Hospitalisation prévenir la personne choisie par le fonctionnaire, fiche dans dossier individuel\n- S’assurer que l’arme et les effets professionnels de l’effectif ont été récupérés\n- Déclencher la procédure de blessure en service\n- Faire appel au SSPO pour l’effectif blessé, ses collègues présents selon la situation le reste du service\n- Matériels : commissaire portera plainte au nom du service après rapport SGAMI sur état des réparations\n- Effectuer un débriefing opérationnel ou psychologique, si besoin"
+      },
+      {
+        type: "flashcard",
+        q: "Finalement, quels sont les cas où nous devons obligatoirement faire un avis au N+1 ?",
+        a: "- Affaire impliquant un fonctionnaire de police, en service ou non\n- Une personnalité, locale ou nationale\n- Événement présentant un caractère particulier, grave, son ampleur, son retentissement médiatique supposé"
+      }
+    ]
+  },
+  organisation_cr: {
+    name: "Organisation d'un CR",
+    icon: "🚧",
+    questions: [
+      {
+        type: "flashcard",
+        q: "Quelle est la première étape dans l’organisation d’un contrôle routier coordonné ?",
+        a: "Définir l’objectif du contrôle."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les objectifs d’un Contrôle routier ?",
+        a: "→ Lutte contre la conduite sous alcool/stup\n→ Contrôle de vitesse\n→ Infractions liées aux transports de marchandises\n→ Vérification des documents des conducteurs"
+      },
+      {
+        type: "flashcard",
+        q: "Qui peut demander à effectuer un contrôle routier ?",
+        a: "→ Le Procureur de la République\n→ Le Préfet\n→ Sur initiative"
+      },
+      {
+        type: "flashcard",
+        q: "Quelle est la première étape cruciale lors d’un contrôle d’identité ?",
+        a: "→ Le choix du lieu d’un contrôle routier"
+      },
+      {
+        type: "flashcard",
+        q: "Quels éléments motivent le choix d’un lieu de contrôle ?",
+        a: "→ L’analyse statistiques d’accidents, zones présentant une forte concentration d’accidents ?\n→ L’identification des infractions récurrentes, ex : alcoolémie, stup, excès de vitesse… + prendre en compte les signalements des riverains et les informations des collaborateurs\n→ Les caractéristiques de la voirie :\nI→ connaître sa circonscription, zone à risque + zones à forte circulation\nI→ établir un schéma tactique\nI→ choisir un lieu sécurisé, pour collaborateurs et usagers\n→ Les périodes à risque :\nI→ week-ends, vacances…\nI→ évènements spécifiques, manifestations, sorties de boîte"
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les types de ressources dont on dispose pour un contrôle routier ?",
+        a: "→ Les moyens humains :\nI→ Nombre d’effectifs à disposition\nI→ Prévoir les effectifs nécessaires\nI→ Dispositif avec rôles définis\n\n→ Les services extérieurs\nI→ Communication avec autres services, gendarmerie, unité spéciales...\nI→ Alerter les fourrières\n\n→ Les moyens matériels"
+      },
+      {
+        type: "flashcard",
+        q: "Donnez une liste de moyens matériels à utiliser",
+        a: "* Nombre de véhicule\n* Kits salivaires\n* Ethylomètre\n* Ethylotest/embouts\n* Kits prélèvements sanguins/réquisitions\n* Armes longues, ex : HK UMP 9 seulement pour les effectifs VP habilités\n* Panneau, « halte police » ou « ralentir police »\n* Éthylotests et dépistages de stupéfiants\n* Radars de contrôle de vitesse\n* NEO pour la vérification des documents\n* PVE\n* Caméras piétons\n* DIVA\n* SPEED LED\n* Cônes de LUBECK\netc…"
+      },
+      {
+        type: "flashcard",
+        q: "Quels renforts peuvent être sollicités pour renforcer un contrôle routier ?",
+        a: "→ CI, CRS\n→ BAC"
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les points essentiels lors de la communication interne, par une NDS dont le chef de service est signataire ?",
+        a: "* Objectif du contrôle routier\n* Localisation\n* Choix de la durée : déterminer la période durant laquelle le contrôle se déroulera, par exemple : durant les heures de pointe, la nuit, etc.\n* Ressources humaines et matérielles\n* Répartition des rôles\n* Localisation d’un deuxième lieu de contrôle\n* Prévenir l’officier SAIP/SLPJ et l’OPJ de permanence"
+      },
+      {
+        type: "flashcard",
+        q: "A qui sera adressée la NDS ?",
+        a: "A destination des services concernés par le contrôle."
+      },
+      {
+        type: "flashcard",
+        q: "En quoi consiste une zone blanche ?",
+        a: "A la suite du Décret Zone blanche du 19/04/2021, consiste en l’interdiction de rediffuser tout message de nature à signaler la présence des forces de l’ordre sur les services électroniques d’aide à la conduite ou à la navigation par géolocalisation."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les autorités à prévenir lors d’un CR ?",
+        a: "→ Selon l’ampleur Maire et/ou Préfecture\n→ Même si absence d’obligation textuelle, préférable de prévenir le Parquet de l’opération, solliciter une réquisition 78-2 CPP pour ne pas limiter le contrôle aux seuls conducteurs"
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les objectifs de la communication, avec la presse notamment ?",
+        a: "* Informer et sensibiliser le public : rappeler les règles de sécurité routière et les risques liés aux infractions.\n* Valoriser l'action des forces de l’ordre : montrer l'engagement des policiers et des autres services dans la lutte contre l'insécurité routière.\n* Dissuader les comportements dangereux.\n* Améliorer l'image des services de l'État.\n* Photographies et vidéos : elles permettent d'illustrer les opérations et de rendre les informations plus attractives.\n* Réseaux sociaux : ils permettent de diffuser les informations en temps réel et de toucher un public plus large."
+      },
+      {
+        type: "flashcard",
+        q: "Quel est le rôle de l’officier lors d’un contrôle routier ?",
+        a: "→ Sécurité de ses collaborateurs et des usagers\n→ Superviseur et coordinateur\n→ Aspect opérationnel"
+      },
+      {
+        type: "flashcard",
+        q: "Les différentes étapes de l’aspect opérationnel de l’officier de police",
+        a: "Briefing\nChoix de l’emplacement et déploiement des équipes\nÉquipement et matériel\nRespect des procédures\n→ Information des objectifs, procédures et des attentes :\n- Mesures de sécurité\n- Comportements à adopter\n- Hiérarchie de commandement\n→ Coordination de l’ensemble des opérations\n- Signalisation claire et visible\n- Véhicules de service positionnés de manière stratégique\n- Couloir de contrôle aménage pour sécurisé le contrôle\n→ Matériel de sécurité\n- Gilets haute visibilité pour tous les agents\n- Lampes torches et projecteurs pour les contrôles de nuit\n- Sifflets\n→ Cadre légal\n- Code de la Route et du CPP\n- Contrôle doit s’effectuer dans le respect des usager\n→ Points de contrôle\n- Plusieurs points possibles\n- Dispatcher chaque équipe sur un ou plusieurs points\n- Espacement des points pour éviter saturation\n→ Communication\n→ Moyens efficaces, radios, téléphones, STORM\n→ Canal de communication dédié\n- Liaison radio discrète\n→ Synchronisation des contrôles\n- Ouverture et fermeture des points de contrôle\n- Assurer un flux de trafic pour éviter les embouteillages excessifs et accidents\n→ Rôle précis et consignes claires de chaque agent\n- Interception\n- Contrôle des docs..\n- Gestion des flux de circulation et régulation",
+        aHtml: `<table class="flashcard-table"><thead><tr><th>Briefing</th><th>Choix de l’emplacement et déploiement des équipes</th><th>Équipement et Matériel</th><th>Respect des procédures</th></tr></thead><tbody><tr><td><strong>→ Information des objectifs, procédures et des attentes :</strong><br>-Mesures de sécurité<br>-Comportements à adopter<br>-Hiérarchie de commandement</td><td><strong>→Coordination de l’ensemble des opérations</strong><br>-Signalisation claire et visible<br>-Véhicules de service positionnés de manière stratégique<br>-Couloir de contrôle aménage pour sécurisé le contrôle<br><strong>→ Points de contrôle</strong><br>-Plusieurs points possibles<br>-Dispatcher chaque équipe sur un ou plusieurs points<br>-Espacement des points pour éviter saturation<br><strong>→ Synchronisation des contrôles</strong><br>-Ouverture et fermeture des points de contrôle<br>-Assurer un flux de trafic pour éviter les embouteillages excessifs et accidents<br><strong>→ Rôle précis et consignes claires de chaque agent</strong><br>-Interception<br>-Contrôle des docs..<br>-Gestion des flux de circulation et régulation</td><td><strong>→ Matériel de sécurité</strong><br>-Gilets haute visibilité pour tous les agents<br>-Lampes torches et projecteurs pour les contrôles de nuit<br>-Sifflets<br><strong>→ Communication</strong><br>→Moyens efficaces (Radios, téléphones, STORM)<br>→Canal de communication dédié<br>-Liaison radio discrète</td><td><strong>→ Cadre légal</strong><br>-Code de la Route et du CPP<br>Contrôle doit s’effectuer dans le respect des usager</td></tr></tbody></table>`
+      },
+      {
+        type: "flashcard",
+        q: "Comment s’effectue la supervision centrale et la gestion de l’opération ?",
+        a: "→ Commandement centralisé : l’officier en charge de l’opération doit superviser l’ensemble des équipes et recevoir des rapports réguliers sur l'avancée de l’opération. Il doit être en mesure de prendre des décisions rapides et informer en fonction des informations reçues.\n→ Suivi en temps réel : par moyens radios, l’officier peut suivre l'état d'avancement du contrôle, coordonner les efforts et adapter l’action si nécessaire."
+      },
+      {
+        type: "flashcard",
+        q: "Citez quatre points clés sur la gestion et la sécurité d’un CR",
+        a: "* Protection des VL administratifs et matériel individuel et collectif\n* Gestion des individus contrôlés/interpellés\n* Gestion des VL interceptés\n* Prise en compte permanente de l’environnement"
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est ce qui est primordial de faire, dans l’ordre avant de quitter le point de contrôle ?",
+        a: "1) On récupère le matériel et on vérifie que rien ne manque\n2) Tout matériel défectueux ou cassé doit être signalé\n3) Annonce de la fin du contrôle\n4) On quitte le point de contrôle"
+      },
+      {
+        type: "flashcard",
+        q: "Comment se matérialise un bilan de contrôle ?",
+        a: "→ Débriefing :\nI→ Réunion de retour : analyser les résultats de l’opération points forts et difficultés + axes d’amélioration\nI→ Rapports et feedback des équipes"
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les données qualitatives et quantitatives d’un CR ?",
+        a: "Données quantitatives\n* Nombre de véhicules contrôlés\n* Nombre d'infractions constatées, par type : excès de vitesse, alcoolémie, etc.\n* Nombre de rétention de permis de conduire\n* Nombre de véhicules immobilisés/mis en fourrière\n* Nombre de personnes interpellées\n* Nombre de contraventions et/ou délits relevé\n\nDonnées qualitatives\n* Type d'infractions les plus fréquentes\n* Comportement des usagers de la route\n* Difficultés rencontrées lors du contrôle\n* Efficacité du dispositif mis en place. Ces rapports seront ensuite centralisés et analysés\n* Moment de convivialité\n* Valorisation des effectifs\n* Remerciements aux services extérieurs ayant participé au dispositif, fourrière, CSU…\nATTENTION : TG de CR + TG 11 points à rédiger pour chaque affaire + avis parquet et Préfecture"
+      },
+      {
+        type: "flashcard",
+        q: "En quoi consiste le reste du bilan du contrôle ?",
+        a: "→ Suivi du contrôle\n* Exploitation des données\n* Utilisation des données pour adapter les futurs contrôles\n* Mise en place d'actions ciblées en fonction des infractions constatées\n* Renforcement des contrôles dans les zones à risque\n→ Suivi des infractions\n* Suivi des procédures judiciaires liées aux infractions constatées\n* Analyse des récidives\n* Mise en place de mesures de sensibilisation et de prévention\n→ Analyse des résultats\n* Comparaison des résultats\n* Évaluation de l'impact du contrôle sur la sécurité routière à cours terme\n* Évaluation de l'efficacité\n* Évaluation de l'impact des contrôles sur la sécurité routière à long terme\n* Analyse des statistiques d'accidents\n* Adaptation des stratégies en fonction des résultats obtenus\n→ Communication\n* Communication des résultats du contrôle aux autorités compétentes et au public\n* Sensibilisation des usagers de la route aux risques liés aux infractions\n* Information sur les actions menées pour améliorer la sécurité routière"
+      },
+      {
+        type: "flashcard",
+        q: "En clair, qu’est ce qui est important dans le bilan et le suivi du contrôle routier ?",
+        a: "* Optimiser l'efficacité des contrôles routiers\n* Améliorer la sécurité routière\n* Lutter contre la délinquance routière\n* Sensibiliser les usagers de la route\n* Permettre aux forces de l'ordre d'adapter leurs actions"
+      }
+    ]
+  },
+  rodeo: {
+    name: "Rodéo",
+    icon: "🏍️",
+    questions: [
+      {
+        type: "flashcard",
+        q: "Quelle est la définition du rodéo motorisé ?",
+        a: "Le rodéo motorisé consiste à commettre, à l’aide d’un véhicule terrestre à moteur et de façon intentionnelle, des manœuvres violant des obligations de sécurité ou de prudence prévues par le Code de la route, compromettant la sécurité des usagers ou troublant la tranquillité publique sur VP."
+      },
+      {
+        q: "Le rodéo motorisé est puni de quelles peines ?",
+        choices: ["2 ans d’emprisonnement et 30 000 euros d’amende", "1 an d’emprisonnement et 15 000 euros d’amende", "Uniquement une amende de 7 500 euros", "6 mois d’emprisonnement et 7 500 euros d’amende"],
+        answer: [1],
+        exp: "La réponse correcte est : 1 an d’emprisonnement et 15 000 euros d’amende"
+      },
+      {
+        type: "vf",
+        q: "Pour que le délit soit caractérisé, faut-il une pluralité d’auteurs ?",
+        answer: false,
+        exp: "La réponse correcte est : Faux"
+      },
+      {
+        type: "vf",
+        q: "Pour que le délit soit caractérisé, faut-il une répétition des manœuvres dangereuses ?",
+        answer: true,
+        exp: "La réponse correcte est : Vrai"
+      },
+      {
+        q: "Un jeune cycliste roule à vive allure dans les rues piétonnes de sa ville. Il frôle volontairement à plusieurs reprises les piétons pour leur faire peur et effectue des dérapages ainsi que des roues arrière avec son VTT mécanique non assisté. Il est intercepté sans difficulté par une patrouille après avoir obtempéré. Peut-il être interpellé pour rodéo motorisé conformément à l’article L236-1 du Code de la route ?",
+        choices: ["Oui", "Non"],
+        answer: [1],
+        exp: "La réponse correcte est : Non"
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les critères nécessaires pour que l’élément matériel du rodéo motorisé soit caractérisé ?",
+        a: "1 : La conduite d’un véhicule terrestre à moteur.\n2 : Des manœuvres répétées constituant des violations d’obligations de sécurité ou de prudence.\n3 : Un danger pour la sécurité des usagers ou un trouble à la tranquillité publique.\nNota : l’élément moral suppose une violation délibérée et répétée d’une obligation de sécurité, ainsi que la conscience de compromettre la sécurité des usagers de la route ou de troubler la tranquillité publique."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les quatre circonstances aggravantes du rodéo motorisé ?",
+        a: "1 : Fait commis en réunion.\nPeine : 2 ans d’emprisonnement et 30 000 euros d’amende.\n2 : Fait commis sous stupéfiants ou en refusant de se soumettre aux vérifications.\nPeine : 3 ans d’emprisonnement et 45 000 euros d’amende.\n3 : Fait commis sous l’empire d’un état alcoolique ou en refusant de se soumettre aux vérifications.\nPeine : 3 ans d’emprisonnement et 45 000 euros d’amende.\n4 : Fait commis sans être titulaire du permis, ou avec un permis invalide, annulé, suspendu ou retenu.\nPeine : 3 ans d’emprisonnement et 45 000 euros d’amende.\nNota : en cas de cumul d’au moins deux circonstances aggravantes, la peine est portée à 5 ans d’emprisonnement et 75 000 euros d’amende."
+      },
+      {
+        type: "flashcard",
+        q: "Que peut faire un officier lorsque les rodéos se produisent régulièrement au même endroit ou sont commis par des individus identifiés comme provenant d’un quartier ou d’un lieu identifié ?",
+        a: "L’officier peut organiser, après proposition à la hiérarchie et à la justice, une fouille des lieux, notamment des parties communes, afin d’appréhender les engins utilisés pour ce type d’événements."
+      },
+      {
+        type: "flashcard",
+        q: "Que peut faire l’officier lorsque le rodéo est commis par des individus se regroupant après une communication sur les réseaux sociaux ou d’autres formes de promotion ?",
+        a: "Plusieurs actions peuvent être envisagées :\n1 : Un changement de configuration des lieux, en partenariat avec la mairie, le département ou le propriétaire des lieux, notamment dans le cas d’un parking.\n2 : Une opération de police préventive.\n3 : Une opération répressive pendant le rodéo. L’officier peut demander l’usage de drones pour localiser les auteurs et permettre leur interpellation dans des conditions moins dangereuses, en limitant leurs possibilités de fuite.\n4 : Un rapprochement avec les établissements scolaires du secteur, afin de dispenser des actions de prévention auprès des jeunes par un ou plusieurs effectifs du service."
+      },
+      {
+        type: "flashcard",
+        q: "Le véhicule ayant servi à commettre l’infraction peut-il être confisqué ?",
+        a: "Oui. Le véhicule ayant servi à commettre l’infraction peut être confisqué.\nNota : l’immobilisation et la mise en fourrière à titre provisoire sont possibles, avec avis au procureur.\nATTENTION : la tentative n’est pas punissable MAIS la complicité est punissable."
+      },
+      {
+        type: "flashcard",
+        q: "Qu’est-ce que l’incitation aux rodéos motorisés ?",
+        a: "L’incitation aux rodéos motorisés consiste à inciter directement une personne à participer à un rodéo motorisé, à organiser un rassemblement destiné à cette pratique, ou à en faire la promotion par tout moyen.\nCes comportements constituent une infraction."
+      },
+      {
+        type: "flashcard",
+        q: "Quels sont les différents éléments matériels de l’infraction d’incitation aux rodéos motorisés ?",
+        a: "1 : Inciter directement une personne à participer à un rodéo motorisé.\n2 : Organiser un rassemblement destiné à permettre la commission d’un rodéo motorisé en réunion.\n3 : Faire la promotion, par tout moyen, d’un rodéo motorisé commis en réunion.\nLa promotion désigne le fait de présenter un comportement ou une pratique sous un jour favorable. Elle peut être réalisée par tout moyen de communication, notamment via les réseaux sociaux.\nA RETENIR : l’infraction est caractérisée même si l’incitation, l’organisation ou la promotion n’a pas été suivie d’effet."
+      },
+      {
+        type: "flashcard",
+        q: "Quelle est la peine encourue pour l’infraction d’incitation aux rodéos motorisés ?",
+        a: "L’infraction est punie de 2 ans d’emprisonnement et de 30 000 euros d’amende.\nPeines complémentaires et mesures possibles :\n· Confiscation obligatoire du véhicule ayant servi à commettre l’infraction.\n· Immobilisation administrative possible.\n· Mise en fourrière du véhicule possible sans autorisation du procureur, qui doit toutefois être informé immédiatement par tout moyen.\nNota :\nLa tentative n’est pas punissable. La complicité est punissable. Il n’existe pas de circonstances aggravantes pour cette infraction."
+      },
+      {
+        type: "flashcard",
+        q: "Que doit faire l’officier face à une incitation aux rodéos motorisés ?",
+        a: "L’officier peut effectuer une recherche sur les différents réseaux sociaux afin de constater si la promotion de ces rassemblements est faite et d’identifier l’auteur de ces publications.\nEn partenariat avec le référent sûreté et les partenaires locaux, une présence policière peut être mise en place sur les lieux, en amont de l’événement.\nSi cela n’est pas possible en raison d’un délai trop court, l’organisation d’un contrôle routier peut être envisagée.\nL’officier doit assurer le suivi des procédures judiciaires de recherche et d’interpellation du ou des auteurs."
+      }
+    ]
+  },
+  refus_obtemperer: {
+    name: "Refus d'obtempérer",
+    icon: "🛑",
+    questions: [
+      {
+        type: "flashcard",
+        q: "Qui est concerné par le refus d’obtempérer ?",
+        a: "« Tout véhicules » : comprend vélo, trottinette etc, article R311-1 Code de la route dénombre tous les véhicules."
+      },
+      {
+        type: "flashcard",
+        q: "Quel est l’élément légal ?",
+        a: "R233-1 CR.\nLe fait, pour tout conducteur, d'omettre d'obtempérer à une sommation de s'arrêter émanant d'un fonctionnaire ou d'un agent chargé de constater les infractions et muni des insignes extérieurs et apparents de sa qualité."
+      },
+      {
+        type: "flashcard",
+        q: "Quel est l’élément matériel ?",
+        a: "Une sommation de s’arrêter : elle doit désigner clairement le conducteur, gestes réglementaires d’arrêt, coups de sifflet, etc. Ce dernier ne doit avoir aucun doute sur la nature de l’ordre qui lui est destiné. La forme de l’ordre importe peu.\nUn refus d’obtempérer : il est le fait du conducteur de tout véhicule ou ensemble de véhicules.\nSeul le conducteur du véhicule peut être poursuivi, cependant la responsabilité des passagers peut être retenue pour complicité de refus d’obtempérer à une sommation de s’arrêter.\nElle peut se caractériser par le comportement du conducteur du véhicule, voire par celui des occupants."
+      },
+      {
+        type: "flashcard",
+        q: "Quel est l’élément moral ?",
+        a: "Volonté de ne pas obéir à une sommation de s’arrêter."
+      },
+      {
+        type: "flashcard",
+        q: "Quelles sont les circonstances aggravantes ?",
+        a: "Lorsqu’il a été commis dans des circonstances exposant directement autrui à un risque de mort ou de blessures de nature à entraîner une mutilation ou une infirmité permanente.\nIl s’agit du refus d’obtempérer commis par un conducteur qui conduit en violation d’une règle prévue par le code de la route.\nLa violation de la règle de sécurité ou de prudence doit entraîner en soi une probabilité très importante d’accident corporel.\nPar ailleurs, le risque doit être causé à autrui. Les faits doivent donc être commis alors que des personnes sont présentes et sont susceptibles d’être victimes d’un préjudice physique grave.\nLorsque les faits ont été commis dans des circonstances exposant directement les personnes mentionnées au I de l'article L. 233-1, fonctionnaires ou agents chargés de constater les infractions, à un risque de mort ou de blessures de nature à entraîner une mutilation ou une infirmité permanente."
+      },
+      {
+        type: "flashcard",
+        q: "Quelle est la sanction ?",
+        a: "Infraction simple : 2 ans et 15000€.\nAggravée :\n• 5 ans et 75000€ : commis dans des circonstances exposant autrui à un risque de mort ou blessures de nature à entraîner une mutilation ou une infirmité permanente\n• 7 ans et 100000€ : sur PDAP\n- Dépistage obligatoire, rétention immédiate, immobilisation\n- Confiscation obligatoire du VL lors du refus d’obtempérer aggravé et en récidive + annulation du permis de plein droit\nPeines complémentaires : suspension permis de conduire 3 ans, TIG, jours amende, annulation permis avec interdiction 3 ans, stages, immobilisation, confiscation d’un ou plusieurs véhicules, fourrière, retrait de 6 points.\nTENTATIVE : NON / COMPLICITÉ : OUI"
       }
     ]
   },
