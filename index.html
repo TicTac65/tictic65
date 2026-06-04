@@ -253,7 +253,7 @@ const subjects = {
     name: "Judiciaire",
     icon: "📚",
     description: "Procédure pénale, cadre juridique et garde à vue",
-    themes: ["cadre", "gav", "proced_penale", "proced_penale2", "proced_penale3", "proced_penale4"]
+    themes: ["cadre", "gav", "proced_penale", "proced_penale2", "proced_penale3", "proced_penale4", "cooperation_internationale"]
   },
   securite_routiere: {
     name: "Sécurité routière",
@@ -284,10 +284,76 @@ const subjects = {
     icon: "📝",
     description: "Évaluations transversales et entraînements de synthèse",
     themes: ["qcm_at1", "qcm_at2"]
+  },
+  autre: {
+    name: "AUTRE",
+    icon: "🗂️",
+    description: "Exercices complémentaires et rappels transversaux",
+    themes: ["csi_manquements"]
   }
 };
 
 const themes = {
+  csi_manquements: {
+    name: "Articles CSI et manquements",
+    icon: "📘",
+    shuffleQuestions: true,
+    shuffleChoices: true,
+    modeChoices: [
+      { label: "Trouver le bon manquement", useDefaultQuestions: true },
+      {
+        label: "Trouver le bon article",
+        questions: [
+          { q: "Quel article CSI correspond au manquement suivant : Compte rendu hiérarchique ?", choices: ["R.434-4 CSI", "R.434-9 CSI", "R.434-10 CSI", "R.434-30 CSI"], answer: [0], exp: "La réponse correcte est : R.434-4 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Loyauté ?", choices: ["R.434-5 CSI", "R.434-11 CSI", "R.434-18 CSI", "R.434-29 CSI"], answer: [0], exp: "La réponse correcte est : R.434-5 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Obéissance ?", choices: ["R.434-5 CSI", "R.434-8 CSI", "R.434-17 CSI", "R.434-21 CSI"], answer: [0], exp: "La réponse correcte est : R.434-5 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Conscience et obligations professionnelles ?", choices: ["R.434-5 CSI", "R.434-12 CSI", "R.434-19 CSI", "R.434-20 CSI"], answer: [0], exp: "La réponse correcte est : R.434-5 CSI" },
+          { q: "Quel(s) article(s) CSI correspond(ent) au manquement suivant : Protection par l’autorité hiérarchique des agents ?", choices: ["R.434-6 CSI", "R.434-7 CSI", "R.434-13 CSI", "R.434-30 CSI"], answer: [0,1], exp: "Les réponses correctes sont : R.434-6 CSI, R.434-7 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Formation professionnelle ?", choices: ["R.434-6 CSI", "R.434-10 CSI", "R.434-14 CSI", "R.434-18 CSI"], answer: [0], exp: "La réponse correcte est : R.434-6 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Discrétion et secret professionnels ?", choices: ["R.434-8 CSI", "R.434-12 CSI", "R.434-19 CSI", "R.434-29 CSI"], answer: [0], exp: "La réponse correcte est : R.434-8 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Probité ?", choices: ["R.434-9 CSI", "R.434-4 CSI", "R.434-14 CSI", "R.434-30 CSI"], answer: [0], exp: "La réponse correcte est : R.434-9 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Discernement ?", choices: ["R.434-10 CSI", "R.434-6 CSI", "R.434-15 CSI", "R.434-21 CSI"], answer: [0], exp: "La réponse correcte est : R.434-10 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Impartialité ?", choices: ["R.434-11 CSI", "R.434-8 CSI", "R.434-18 CSI", "R.434-29 CSI"], answer: [0], exp: "La réponse correcte est : R.434-11 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Exemplarité ?", choices: ["R.434-12 CSI", "R.434-7 CSI", "R.434-17 CSI", "R.434-20 CSI"], answer: [0], exp: "La réponse correcte est : R.434-12 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Crédit et renom de la police nationale ?", choices: ["R.434-12 CSI", "R.434-5 CSI", "R.434-18 CSI", "R.434-30 CSI"], answer: [0], exp: "La réponse correcte est : R.434-12 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Activité / cumul d’activité ?", choices: ["R.434-13 CSI", "R.434-9 CSI", "R.434-11 CSI", "R.434-19 CSI"], answer: [0], exp: "La réponse correcte est : R.434-13 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Dignité de la personne / usager ?", choices: ["R.434-14 CSI", "R.434-6 CSI", "R.434-17 CSI", "R.434-21 CSI"], answer: [0], exp: "La réponse correcte est : R.434-14 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Courtoisie à l’égard du public ?", choices: ["R.434-14 CSI", "R.434-8 CSI", "R.434-18 CSI", "R.434-29 CSI"], answer: [0], exp: "La réponse correcte est : R.434-14 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Protection de la personne interpellée ?", choices: ["R.434-17 CSI", "R.434-10 CSI", "R.434-14 CSI", "R.434-30 CSI"], answer: [0], exp: "La réponse correcte est : R.434-17 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Usage de la force ou de la contrainte ?", choices: ["R.434-18 CSI", "R.434-9 CSI", "R.434-12 CSI", "R.434-20 CSI"], answer: [0], exp: "La réponse correcte est : R.434-18 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Intervention et assistance ?", choices: ["R.434-19 CSI", "R.434-5 CSI", "R.434-11 CSI", "R.434-29 CSI"], answer: [0], exp: "La réponse correcte est : R.434-19 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Prise en compte du statut de victime ou de plaignant ?", choices: ["R.434-20 CSI", "R.434-8 CSI", "R.434-13 CSI", "R.434-18 CSI"], answer: [0], exp: "La réponse correcte est : R.434-20 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Utilisation des fichiers de données à caractère personnel ?", choices: ["R.434-21 CSI", "R.434-7 CSI", "R.434-14 CSI", "R.434-19 CSI"], answer: [0], exp: "La réponse correcte est : R.434-21 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Neutralité, laïcité et réserve ?", choices: ["R.434-29 CSI", "R.434-9 CSI", "R.434-12 CSI", "R.434-20 CSI"], answer: [0], exp: "La réponse correcte est : R.434-29 CSI" },
+          { q: "Quel article CSI correspond au manquement suivant : Disponibilité ?", choices: ["R.434-30 CSI", "R.434-6 CSI", "R.434-11 CSI", "R.434-21 CSI"], answer: [0], exp: "La réponse correcte est : R.434-30 CSI" }
+        ]
+      }
+    ],
+    questions: [
+      { q: "Quel manquement principal correspond à l'article R.434-4 CSI ?", choices: ["Compte rendu hiérarchique", "Probité", "Disponibilité", "Discernement"], answer: [0], exp: "La réponse correcte est : Compte rendu hiérarchique" },
+      { q: "Quel manquement principal correspond à l'article R.434-5 CSI ?", choices: ["Loyauté", "Exemplarité", "Neutralité, laïcité et réserve", "Disponibilité"], answer: [0], exp: "La réponse correcte est : Loyauté" },
+      { q: "Quel manquement principal correspond à l'article R.434-5 CSI ?", choices: ["Obéissance", "Probité", "Intervention et assistance", "Courtoisie à l’égard du public"], answer: [0], exp: "La réponse correcte est : Obéissance" },
+      { q: "Quel manquement principal correspond à l'article R.434-5 CSI ?", choices: ["Conscience et obligations professionnelles", "Impartialité", "Prise en compte du statut de victime ou de plaignant", "Protection de la personne interpellée"], answer: [0], exp: "La réponse correcte est : Conscience et obligations professionnelles" },
+      { q: "Quel manquement principal correspond aux articles R.434-6 et R.434-7 CSI ?", choices: ["Protection par l’autorité hiérarchique des agents", "Usage de la force ou de la contrainte", "Dignité de la personne / usager", "Activité / cumul d’activité"], answer: [0], exp: "La réponse correcte est : Protection par l’autorité hiérarchique des agents" },
+      { q: "Quel manquement principal correspond à l'article R.434-6 CSI ?", choices: ["Formation professionnelle", "Disponibilité", "Discernement", "Crédit et renom de la police nationale"], answer: [0], exp: "La réponse correcte est : Formation professionnelle" },
+      { q: "Quel manquement principal correspond à l'article R.434-8 CSI ?", choices: ["Discrétion et secret professionnels", "Exemplarité", "Intervention et assistance", "Disponibilité"], answer: [0], exp: "La réponse correcte est : Discrétion et secret professionnels" },
+      { q: "Quel manquement principal correspond à l'article R.434-9 CSI ?", choices: ["Probité", "Loyauté", "Neutralité, laïcité et réserve", "Protection de la personne interpellée"], answer: [0], exp: "La réponse correcte est : Probité" },
+      { q: "Quel manquement principal correspond à l'article R.434-10 CSI ?", choices: ["Discernement", "Courtoisie à l’égard du public", "Activité / cumul d’activité", "Compte rendu hiérarchique"], answer: [0], exp: "La réponse correcte est : Discernement" },
+      { q: "Quel manquement principal correspond à l'article R.434-11 CSI ?", choices: ["Impartialité", "Probité", "Disponibilité", "Intervention et assistance"], answer: [0], exp: "La réponse correcte est : Impartialité" },
+      { q: "Quel manquement principal correspond à l'article R.434-12 CSI ?", choices: ["Exemplarité", "Utilisation des fichiers de données à caractère personnel", "Obéissance", "Formation professionnelle"], answer: [0], exp: "La réponse correcte est : Exemplarité" },
+      { q: "Quel manquement principal correspond à l'article R.434-12 CSI ?", choices: ["Crédit et renom de la police nationale", "Discernement", "Dignité de la personne / usager", "Protection de la personne interpellée"], answer: [0], exp: "La réponse correcte est : Crédit et renom de la police nationale" },
+      { q: "Quel manquement principal correspond à l'article R.434-13 CSI ?", choices: ["Activité / cumul d’activité", "Prise en compte du statut de victime ou de plaignant", "Neutralité, laïcité et réserve", "Loyauté"], answer: [0], exp: "La réponse correcte est : Activité / cumul d’activité" },
+      { q: "Quel manquement principal correspond à l'article R.434-14 CSI ?", choices: ["Dignité de la personne / usager", "Exemplarité", "Probité", "Intervention et assistance"], answer: [0], exp: "La réponse correcte est : Dignité de la personne / usager" },
+      { q: "Quel manquement principal correspond à l'article R.434-14 CSI ?", choices: ["Courtoisie à l’égard du public", "Disponibilité", "Utilisation des fichiers de données à caractère personnel", "Compte rendu hiérarchique"], answer: [0], exp: "La réponse correcte est : Courtoisie à l’égard du public" },
+      { q: "Quel manquement principal correspond à l'article R.434-17 CSI ?", choices: ["Protection de la personne interpellée", "Discernement", "Impartialité", "Crédit et renom de la police nationale"], answer: [0], exp: "La réponse correcte est : Protection de la personne interpellée" },
+      { q: "Quel manquement principal correspond à l'article R.434-18 CSI ?", choices: ["Usage de la force ou de la contrainte", "Formation professionnelle", "Loyauté", "Prise en compte du statut de victime ou de plaignant"], answer: [0], exp: "La réponse correcte est : Usage de la force ou de la contrainte" },
+      { q: "Quel manquement principal correspond à l'article R.434-19 CSI ?", choices: ["Intervention et assistance", "Neutralité, laïcité et réserve", "Probité", "Courtoisie à l’égard du public"], answer: [0], exp: "La réponse correcte est : Intervention et assistance" },
+      { q: "Quel manquement principal correspond à l'article R.434-20 CSI ?", choices: ["Prise en compte du statut de victime ou de plaignant", "Disponibilité", "Protection par l’autorité hiérarchique des agents", "Exemplarité"], answer: [0], exp: "La réponse correcte est : Prise en compte du statut de victime ou de plaignant" },
+      { q: "Quel manquement principal correspond à l'article R.434-21 CSI ?", choices: ["Utilisation des fichiers de données à caractère personnel", "Dignité de la personne / usager", "Obéissance", "Intervention et assistance"], answer: [0], exp: "La réponse correcte est : Utilisation des fichiers de données à caractère personnel" },
+      { q: "Quel manquement principal correspond à l'article R.434-29 CSI ?", choices: ["Neutralité, laïcité et réserve", "Activité / cumul d’activité", "Discernement", "Protection de la personne interpellée"], answer: [0], exp: "La réponse correcte est : Neutralité, laïcité et réserve" },
+      { q: "Quel manquement principal correspond à l'article R.434-30 CSI ?", choices: ["Disponibilité", "Probité", "Formation professionnelle", "Courtoisie à l’égard du public"], answer: [0], exp: "La réponse correcte est : Disponibilité" }
+    ]
+  },
   qcm_at2: {
     name: "QCM AT2",
     icon: "🧾",
@@ -5406,6 +5472,85 @@ La réponse correcte est : Oui`
       { type: "flashcard", q: "50 - Un conducteur de 18 ans conduit une moto de 35 kW pesant 170 kg, bridée depuis une puissance d’origine de 69 kW. Quel permis faut-il ?", a: "Pas A2 : le A2 permet bien jusqu’à 35 kW, mais le rapport poids/puissance maximal est 0,2 kW/kg.\nIci : 35 ÷ 170 = 0,206 kW/kg, donc non conforme." }
     ]
   },
+  cooperation_internationale: {
+    name: "Coopération internationale",
+    icon: "🌍",
+    questions: [
+      { type: "vf", q: "1. Le Système d’Information Schengen est alimenté automatiquement par certains fichiers français", answer: true, exp: "La réponse correcte est : Vrai" },
+      { type: "vf", q: "2. Les renseignements donnés par le SCCOPOL sont toujours utilisables en procédure", answer: false, exp: "La réponse correcte est : Faux" },
+      { type: "vf", q: "3. Les pays tiers disposent d’ODL au sein d’Europol ?", answer: true, exp: "La réponse correcte est : Vrai" },
+      { type: "vf", q: "4. Une notice rouge utilisée pour formuler une demande d’arrestation vaut mandat d’arrêt", answer: false, exp: "La réponse correcte est : Faux" },
+      { type: "vf", q: "5. Les documents émanant d’Interpol ont un caractère contraignant", answer: false, exp: "La réponse correcte est : Faux" },
+      { type: "vf", q: "6. H24 est un service de la DCIS", answer: true, exp: "La réponse correcte est : Vrai" },
+      { type: "vf", q: "7. Il est possible de créer une équipe commune d’enquête avec un pays hors Union européenne ?", answer: true, exp: "La réponse correcte est : Vrai" },
+      { type: "vf", q: "8. Les informations recueillies par la DCIS ayant valeur de renseignement peuvent-elles être retranscrites en procédure ?", answer: true, exp: "La réponse correcte est : Vrai" },
+      { q: "9. Une demande s’inscrivant dans le cadre de l’initiative suédoise peut être refusée", choices: ["Préjudiciable à l’enquête en cours", "En jeu de la sécurité nationale", "Atteinte à la personne"], answer: [0,1], exp: "Les réponses correctes sont : Préjudiciable à l’enquête en cours, En jeu de la sécurité nationale" },
+      { q: "10. Quelles sont les applications du traité de Prüm ?", choices: ["Comparaison d’empreintes génétiques", "Consultation d’EUCARIS", "Alimentation de la plateforme PHAROS", "Comparaison d’empreintes digitales"], answer: [0,1,3], exp: "Les réponses correctes sont : Comparaison d’empreintes génétiques, Consultation d’EUCARIS, Comparaison d’empreintes digitales" },
+      { q: "11. Qu’est-ce que le SIS II ?", choices: ["Une messagerie sécurisée pour les échanges européens de coopération", "Un système d’interception téléphonique sécurisé", "Un fonds européen pour les déplacements des forces de sécurité", "Une base de données nominative relative aux personnes et objets recherchés"], answer: [3], exp: "La réponse correcte est : Une base de données nominative relative aux personnes et objets recherchés" },
+      { q: "12. Citez les principales directions actives de coopération internationale", choices: ["Direction centrale de la sécurité publique", "Direction de la coopération internationale de sécurité", "Direction centrale de la coopération internationale", "Direction centrale de la police judiciaire", "Direction centrale de la police aux frontières"], answer: [1,3,4], exp: "Les réponses correctes sont : Direction de la coopération internationale de sécurité, Direction centrale de la police judiciaire, Direction centrale de la police aux frontières" },
+      { q: "13. Le SCCOPOL peut utiliser son canal Schengen qui comporte", choices: ["30 pays membres", "26 pays membres", "27 pays membres et 41 associés", "28 pays membres"], answer: [2], exp: "La réponse correcte est : 27 pays membres et 41 associés" },
+      { q: "14. À quel service de la SCCOPOL devons-nous adresser une demande ?", choices: ["INTERPOL", "H24", "SIRENE", "Point de contact central"], answer: [3], exp: "La réponse correcte est : Point de contact central" },
+      { q: "15. Le SCCOPOL est-il interministériel ?", choices: ["Oui", "Non"], answer: [1], exp: "La réponse correcte est : Non" },
+      { q: "16. Quels sont les canaux multilatéraux de la SCCOPOL ?", choices: ["INTERPOL — EUROPOL — CCPD", "INTERPOL — CEPOL — EUROPOL — SCHENGEN", "INTERPOL — EUROJUST — SCHENGEN", "INTERPOL — EUROPOL — SCHENGEN"], answer: [3], exp: "La réponse correcte est : INTERPOL — EUROPOL — SCHENGEN" },
+      { q: "17. S’agissant de la Suisse, au bout de combien de temps doit-on abandonner la surveillance opérée en vertu d’une observation transfrontalière urgente en l’absence de réponse des autorités du pays sur lequel elle a lieu ?", choices: ["2 heures", "6 heures", "5 heures", "12 heures"], answer: [3], exp: "La réponse correcte est : 12 heures" },
+      { q: "18. Qu’est-ce qu’une OTU ?", choices: ["Observation Transfrontalière Urgente", "Observation transfrontalière Unilatérale", "Observation Territoriale Urgente"], answer: [0], exp: "La réponse correcte est : Observation Transfrontalière Urgente" },
+      { q: "19. Quelles sont les particularités d’une OTU ?", choices: ["Obligation d’obtenir l’autorisation dans les 5 heures", "Ne concerne que l’auteur des faits", "Concerne toute personne susceptible de permettre la localisation de l’auteur", "Possibilité de poursuivre l’auteur d’un crime ou délit en flagrance et ce sans autre condition", "Aucune autorisation préalable nécessaire", "Nécessité d’informer le PCC dès le franchissement de la frontière"], answer: [0,1,4,5], exp: "Les réponses correctes sont : Obligation d’obtenir l’autorisation dans les 5 heures, Ne concerne que l’auteur des faits, Aucune autorisation préalable nécessaire, Nécessité d’informer le PCC dès le franchissement de la frontière" },
+      { q: "20. Quelles sont les interdictions formelles des policiers français au cours d’une observation transfrontalière ordinaire ?", choices: ["Procéder à la fouille du véhicule utilisé par l’auteur", "Interpeller la personne observée", "Entrer dans les domiciles et lieux privés"], answer: [0,1,2], exp: "Les réponses correctes sont : Procéder à la fouille du véhicule utilisé par l’auteur, Interpeller la personne observée, Entrer dans les domiciles et lieux privés" },
+      { q: "21. Quelle est la durée des missions des ASI et ODL à l’étranger ?", choices: ["2 ans", "1 an + 1 an", "2 ans + 2 ans", "2 ans + 1 an + 1 an"], answer: [2], exp: "La réponse correcte est : 2 ans + 2 ans" },
+      { q: "22. Vous êtes ODL à Bangkok. Citez vos autorités hiérarchiques", choices: ["Directeur de la sécurité diplomatique", "Attaché de sécurité intérieure", "Ambassadeur"], answer: [1], exp: "La réponse correcte est : Attaché de sécurité intérieure" },
+      { q: "23. Quelles sont les obligations des policiers français au cours d’une observation transfrontalière ordinaire ?", choices: ["Pouvoir justifier de leur qualité et du cadre de leur observation", "Obtenir une autorisation préalable", "Obtempérer aux autorités locales", "Porter leur arme de service", "Respecter le droit local"], answer: [0,1,2,4], exp: "Les réponses correctes sont : Pouvoir justifier de leur qualité et du cadre de leur observation, Obtenir une autorisation préalable, Obtempérer aux autorités locales, Respecter le droit local" },
+      { q: "24. Pour quels motifs un pays membre de l’UE peut-il refuser une décision d’enquête européenne ?", choices: ["Demande coûteuse pour le pays d’exécution", "Infraction peu grave au regard de la législation du pays d’exécution", "Atteinte aux intérêts fondamentaux de la nation", "Immunité de la personne visée par la demande"], answer: [2,3], exp: "Les réponses correctes sont : Atteinte aux intérêts fondamentaux de la nation, Immunité de la personne visée par la demande" },
+      { q: "25. Interpol délivre", choices: ["Des fiches, des alertes et des notices", "Des alertes", "Des notices", "Des fiches"], answer: [2], exp: "La réponse correcte est : Des notices" },
+      { q: "26. Les demandes Interpol transitent par", choices: ["CCPD", "BCN", "Bureau SIRENE", "UNE"], answer: [1], exp: "La réponse correcte est : BCN" },
+      { q: "27. Quelle(s) entité(s) est ou sont concernée(s) par l’initiative suédoise ?", choices: ["INTERPOL", "CEDEAO", "Schengen", "Union européenne"], answer: [3], exp: "La réponse correcte est : Union européenne" },
+      { q: "28. Quels sont les principes de l’initiative suédoise ?", choices: ["Réactivité pour apporter la réponse", "Équivalence d’accès des données échangées", "Création d’équipe commune d’enquête", "Disponibilité sans condition des informations"], answer: [1,3], exp: "Les réponses correctes sont : Équivalence d’accès des données échangées, Disponibilité sans condition des informations" },
+      { q: "29. Le numéro GECI concerne", choices: ["Le canal Interpol", "Le canal Schengen", "Le canal Eurojust", "Le canal Prüm"], answer: [0,1,3], exp: "Les réponses correctes sont : Le canal Interpol, Le canal Schengen, Le canal Prüm" },
+      { type: "vf", q: "30. Toutes les demandes d’arrestations provisoires émises par des pays étrangers sont enregistrées au FPR", answer: false, exp: "La réponse correcte est : Faux" },
+      { q: "31. Les fichiers utilisés par Interpol permettent", choices: ["Des analyses", "Une consultation des bases de données", "Le recoupement d’informations"], answer: [1,2], exp: "Les réponses correctes sont : Une consultation des bases de données, Le recoupement d’informations" },
+      { q: "32. Quelles sont les conditions de fond pour pouvoir mettre en place une équipe commune d’enquête ?", choices: ["La multiplicité des pays concernés par l’enquête en cours", "La nécessité de partager les frais de procédure", "L’existence préalable de procédure dans chaque pays concerné", "La nécessité de concerter l’action de plusieurs services de police"], answer: [0,2,3], exp: "Les réponses correctes sont : La multiplicité des pays concernés par l’enquête en cours, L’existence préalable de procédure dans chaque pays concerné, La nécessité de concerter l’action de plusieurs services de police" },
+      { q: "33. Qui donne son accord pour la mise en place d’une équipe commune d’enquête hors Union européenne ?", choices: ["Le ministère des affaires étrangères et les États membres participants", "Les États membres participants", "Le membre national d’EUROJUST et les États membres participants", "Le ministère de la justice et les États membres participants"], answer: [0], exp: "La réponse correcte est : Le ministère des affaires étrangères et les États membres participants" },
+      { q: "34. Peut-on mettre en œuvre le droit de poursuite pour une affaire de trafic d’armes ou de vol sous la menace d’une arme ?", choices: ["Oui, dans tous les cas", "Oui, si le CCPD l’autorise", "Non", "Seulement si la convention liant les deux États concernés le permet"], answer: [1], exp: "La réponse correcte est : Oui, si le CCPD l’autorise" },
+      { q: "35. Le déplacement de policiers dans un pays étranger est soumis à l’autorisation de", choices: ["Du BCN français, du BCN étranger et du magistrat étranger", "Du magistrat étranger et du BCN étranger", "Du ministère des affaires étrangères du pays étranger", "Du BCN étranger, du magistrat étranger et de l’attaché de sécurité intérieure"], answer: [0], exp: "La réponse correcte est : Du BCN français, du BCN étranger et du magistrat étranger" },
+      { q: "36. Quels sont les déclinaisons opérationnelles en matière de coopération internationale ?", choices: ["Attaché de sécurité intérieure", "Officier de liaison", "H24"], answer: [0,1], exp: "Les réponses correctes sont : Attaché de sécurité intérieure, Officier de liaison" },
+      { q: "37. Quels sont les grands domaines de la coopération internationale ?", choices: ["Institutionnels", "Techniques", "Opérationnels", "Organisationnels"], answer: [0,1,2], exp: "Les réponses correctes sont : Institutionnels, Techniques, Opérationnels" },
+      { q: "38. Dans le cadre d’une enquête de trafic de cigarettes, pouvez-vous joindre le CCPD situé sur la frontière germano-tchèque de Schwandorf et Furth-im-Wald ?", choices: ["Oui", "Non"], answer: [1], exp: "La réponse correcte est : Non" },
+      { q: "39. Pouvons-nous procéder à une audition à l’étranger dans le cadre d’une enquête européenne ?", choices: ["Oui", "Non"], answer: [0], exp: "La réponse correcte est : Oui" },
+      { q: "40. Combien y a-t-il de CCPD aux frontières françaises ?", choices: ["12", "10", "14", "8"], answer: [1], exp: "La réponse correcte est : 10" },
+      { q: "41. Quels personnels exercent au sein d’un CCPD ?", choices: ["Gendarmes", "Policiers", "Personnels de la sécurité civile", "Douaniers"], answer: [0,1,3], exp: "Les réponses correctes sont : Gendarmes, Policiers, Douaniers" },
+      { q: "42. Parmi les propositions suivantes, quelles sont les prérogatives d’un CCPD ?", choices: ["Coordination des patrouilles transfrontalières", "Recherches complexes en ECE", "Réadmission des étrangers en situation irrégulière"], answer: [0], exp: "La réponse correcte est : Coordination des patrouilles transfrontalières" },
+      { q: "43. Est-il possible de procéder à une observation transfrontalière ordinaire aux Pays-Bas ?", choices: ["Non", "Oui"], answer: [0], exp: "La réponse correcte est : Non" },
+      { q: "44. Quel est ou quels sont le ou les pouvoirs des policiers français au cours d’une observation transfrontalière ?", choices: ["Porter leur arme de service sauf interdiction du pays hôte", "Requérir les forces de police locale", "Interpeller la personne observée", "Entrer dans les domiciles et lieux privés"], answer: [0], exp: "La réponse correcte est : Porter leur arme de service sauf interdiction du pays hôte" },
+      { q: "45. SIRENE est utilisé par", choices: ["PRÜM", "SCHENGEN", "AOR", "EUROPOL"], answer: [0], exp: "La réponse cochée sur le fichier est : PRÜM.\nPoint à vérifier : dans le cours classique, SIRENE est normalement rattaché au canal Schengen." },
+      { type: "vf", q: "46. Un ASI peut identifier des biens immobiliers appartenant à un criminel dans le cadre d’une procédure de stupéfiants", answer: true, exp: "La réponse correcte est : Vrai" },
+      { q: "47. Parmi ces missions, quelle est ou quelles sont celle(s) faisant partie des objectifs de l’agence FRONTEX ?", choices: ["Assister Europol dans ses missions", "Assurer l’imperméabilité des frontières de l’UE face à l’immigration clandestine", "Réduire la vulnérabilité des frontières extérieures grâce à une connaissance globale de la situation", "Garantir la pérennité des frontières intérieures"], answer: [1,2], exp: "Les réponses correctes sont : Assurer l’imperméabilité des frontières de l’UE face à l’immigration clandestine, Réduire la vulnérabilité des frontières extérieures grâce à une connaissance globale de la situation" },
+      { q: "48. Frontex se compose d’un corps permanent qui est réparti en", choices: ["5 catégories", "4 catégories", "3 catégories"], answer: [1], exp: "La réponse correcte est : 4 catégories" },
+      { q: "49. Quelle est la durée maximale de mise à disposition d’un fonctionnaire de police auprès de l’agence Frontex ?", choices: ["4 mois", "2 ans", "1 an"], answer: [1], exp: "La réponse correcte est : 2 ans" },
+      { q: "50. À terme, l’effectif du corps des gardes-frontières et gardes-côtes européens comptera", choices: ["Plus de 10 000 personnels", "Plus de 5 000 personnels", "Plus de 15 000 personnels"], answer: [0], exp: "La réponse correcte est : Plus de 10 000 personnels" },
+
+      { type: "flashcard", q: "Cas pratique 1", a: "Vous êtes affecté au commissariat de Strasbourg en qualité d’OPJ. Une patrouille pédestre place de l’Europe, dans la vieille préfecture, vous est avisée qu’un APM monte à vue quelques minutes auparavant sur votre circonscription.\nL’auteur s’enfuit à bord d’un véhicule Ford Escort immatriculé RZJ-H1234, immatriculation allemande. Le véhicule passe devant vous. Vous le prenez en charge et franchissez la frontière franco-allemande par le pont de Kehl." },
+      { q: "51. Comment justifiez-vous ce passage frontière ?", choices: ["Possibilité de mettre en place une observation transfrontalière ordinaire", "Cadre juridique de la flagrance", "L’individu poursuivi est l’auteur de l’infraction", "Commission d’une infraction prévue à l’article 41-4 de la Convention d’Application des Accords de Schengen"], answer: [1,2,3], exp: "Les réponses correctes sont : Cadre juridique de la flagrance, L’individu poursuivi est l’auteur de l’infraction, Commission d’une infraction prévue à l’article 41-4 de la Convention d’Application des Accords de Schengen" },
+      { q: "52. Quelles sont les démarches à effectuer ?", choices: ["Aviser H24 pour une demande d’entraide internationale", "Signaler le franchissement de la frontière au CCPD", "Informer le procureur de la République territorialement compétent"], answer: [1,2], exp: "Les réponses correctes sont : Signaler le franchissement de la frontière au CCPD, Informer le procureur de la République territorialement compétent" },
+      { q: "53. Quels sont les devoirs des policiers ?", choices: ["Obtempérer aux ordres et instructions des autorités locales", "Interpeller l’individu", "Justifier de leur qualité", "Respecter le droit local", "Justifier du cadre de l’observation", "Cesser leur poursuite dès que leurs homologues allemands ont pris en charge le véhicule"], answer: [0,2,3], exp: "Les réponses correctes sont : Obtempérer aux ordres et instructions des autorités locales, Justifier de leur qualité, Respecter le droit local" },
+
+      { type: "flashcard", q: "Cas pratique 2", a: "Affecté à l’FAST, vous enquêtez sur un trafic de stupéfiants dont deux commanditaires sont localisés à Casablanca au Maroc. Le magistrat instructeur vous demande de vous rendre sur place pour confirmer l’implication d’un troisième individu apparu sur écoutes téléphoniques." },
+      { q: "54. Quel message allez-vous rédiger à destination de la SCCOPOL pour organiser ce déplacement à l’étranger ?", choices: ["Message 6 points", "Message 8 points", "Message 10 points"], answer: [0], exp: "La réponse correcte est : Message 6 points" },
+      { q: "55. Quels sont les services ou autorités à contacter ou à aviser ?", choices: ["Magistrat", "PCC", "Hiérarchie", "BCN France", "ASI ou ODL local"], answer: [1,2,4], exp: "Les réponses correctes sont : PCC, Hiérarchie, ASI ou ODL local" },
+      { q: "56. Quels sont les principaux avantages à la mise en place d’une équipe commune d’enquête ?", choices: ["Permet de se passer de la commission rogatoire internationale", "Les originaux des actes réalisés par les policiers étrangers sont versés à la procédure", "Les enquêteurs travaillent ensemble sur la globalité des territoires des États signataires", "Échange direct d’informations et coordination des investigations"], answer: [0,3], exp: "Les réponses correctes sont : Permet de se passer de la commission rogatoire internationale, Échange direct d’informations et coordination des investigations" },
+
+      { type: "flashcard", q: "Cas pratique 3", a: "Vous êtes affecté au commissariat de Morteau-Fault-Yonne en qualité d’adjoint au chef du service judiciaire. Suite à un contrôle d’identité, l’équipe police-secours a procédé à l’interpellation d’un individu de nationalité espagnole faisant l’objet d’un mandat d’arrêt européen." },
+      { q: "57. Avant de prendre une mesure privative de liberté à l’encontre de l’individu, quelles vérifications faites-vous ?", choices: ["Avis au procureur de la République territorialement compétent", "Contrôle du cadre légal ayant amené à la consultation du FPR", "Comparaisons d’empreintes digitales", "Vérification de la validité de la fiche de recherche"], answer: [1,3], exp: "Les réponses correctes sont : Contrôle du cadre légal ayant amené à la consultation du FPR, Vérification de la validité de la fiche de recherche" },
+      { q: "58. Sous quel régime juridique sera placé l’individu ?", choices: ["Vérification d’identité", "Rétention judiciaire", "Rétention administrative", "Garde à vue"], answer: [1], exp: "La réponse correcte est : Rétention judiciaire" },
+      { q: "59. Avec quel service prendrez-vous contact ?", choices: ["H24", "SIRENE France", "CCPD"], answer: [1], exp: "La réponse correcte est : SIRENE France" },
+      { q: "60. Quel est le quantum des peines encourues ou prononcées prévues par la loi pour la délivrance d’un mandat d’arrêt européen ?", choices: ["Peine prononcée supérieure à 4 mois d’emprisonnement", "Peine prononcée et encourue supérieure à 1 an", "Peine prononcée supérieure à 2 mois d’emprisonnement", "Peine encourue supérieure à 1 an d’emprisonnement", "Peine encourue supérieure à 2 ans d’emprisonnement"], answer: [0,3], exp: "Les réponses correctes sont : Peine prononcée supérieure à 4 mois d’emprisonnement, Peine encourue supérieure à 1 an d’emprisonnement" },
+      { q: "61. En France, quelle(s) autorité(s) peut/peuvent délivrer un MAE ?", choices: ["Juge des libertés et de la détention", "Procureur général", "Juge d’instruction", "Procureur de la République", "Président du tribunal judiciaire"], answer: [1,3], exp: "Les réponses correctes sont : Procureur général, Procureur de la République" },
+      { q: "62. Dans quel fichier le magistrat signale-t-il l’individu recherché ?", choices: ["Fichier des Personnes Recherchées 2", "Système d’Information Schengen 2", "Fichier Européen des Individus Recherchés 2"], answer: [1], exp: "La réponse correcte est : Système d’Information Schengen 2" },
+
+      { type: "flashcard", q: "Cas pratique 4", a: "Vous êtes nouvellement affecté à la DDPAF de Montgenèvre en qualité de chef de brigade mobile de recherche. Vous organisez la mise en place d’un contrôle routier rue Suffren à La Reney.\nÀ 15h20, un véhicule Toyota RAV4 immatriculé 12-ARX-NL, monté par quatre individus de type asiatique, refuse le contrôle et prend la fuite en direction de la frontière suisse située à deux kilomètres. Un véhicule banalisé de votre dispositif prend en compte le véhicule et amorce sa progression sur les ondes." },
+      { q: "63. Les effectifs de police qui ont pris en charge le véhicule peuvent traverser la frontière franco-suisse", choices: ["Vrai", "Faux"], answer: [1], exp: "La réponse correcte est : Faux" },
+      { q: "64. Au cours de cette prise en charge, les policiers français peuvent-ils traverser les frontières suisse et italienne tout en amorçant leur progression ?", choices: ["Non", "Oui"], answer: [0], exp: "La réponse correcte est : Non" },
+      { q: "65. Vous décidez la mise en surveillance de ce véhicule. Vous l’inscrivez", choices: ["Au FOVeS", "Au SIS", "Au fichier Interpol des véhicules volés"], answer: [0], exp: "La réponse correcte est : Au FOVeS" }
+    ]
+  },
   cadre: {
     name: "Cadre juridique",
     icon: "⚖️",
@@ -7124,6 +7269,7 @@ La réponse correcte est : Faux`
 let currentSubjectKey = null;
 let currentThemeKey = null;
 let currentQuestions = [];
+let currentThemeModeIndex = null;
 let currentIndex = 0;
 let score = 0;
 let answered = false;
@@ -7193,10 +7339,51 @@ function openSubject(key) {
   document.getElementById("progressBar").style.width = "0%";
 }
 
+function shuffleArray(items) {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function shuffleQuestionChoices(question) {
+  if (!question || !Array.isArray(question.choices) || !Array.isArray(question.answer)) {
+    return question;
+  }
+  const indexedChoices = question.choices.map((choice, index) => ({ choice, index }));
+  const shuffled = shuffleArray(indexedChoices);
+  const remappedAnswers = shuffled
+    .map((entry, newIndex) => question.answer.includes(entry.index) ? newIndex : null)
+    .filter(index => index !== null);
+
+  return {
+    ...question,
+    choices: shuffled.map(entry => entry.choice),
+    answer: remappedAnswers
+  };
+}
+
+function prepareThemeQuestions(key, modeIndex = null) {
+  const theme = themes[key];
+  const mode = modeIndex !== null && theme.modeChoices ? theme.modeChoices[modeIndex] : null;
+  const baseQuestions = mode?.useDefaultQuestions ? theme.questions : (mode?.questions || theme.questions);
+  let questions = [...baseQuestions];
+  if (theme.shuffleChoices) {
+    questions = questions.map(question => shuffleQuestionChoices(question));
+  }
+  if (theme.shuffleQuestions) {
+    questions = shuffleArray(questions);
+  }
+  return questions;
+}
+
 function startTheme(key) {
   currentThemeKey = key;
-  currentQuestions = [...themes[key].questions];
-  currentIndex = themes[key].introHtml ? -1 : 0;
+  currentThemeModeIndex = null;
+  currentQuestions = themes[key].modeChoices ? [] : prepareThemeQuestions(key);
+  currentIndex = themes[key].modeChoices ? -2 : (themes[key].introHtml ? -1 : 0);
   score = 0;
   hideAllViews();
   document.getElementById("quiz").style.display = "block";
@@ -7204,15 +7391,54 @@ function startTheme(key) {
   loadQuestion();
 }
 
+function selectThemeMode(modeIndex) {
+  currentThemeModeIndex = modeIndex;
+  currentQuestions = prepareThemeQuestions(currentThemeKey, modeIndex);
+  currentIndex = 0;
+  score = 0;
+  loadQuestion();
+}
+
 function loadQuestion() {
   answered = false;
   flashcardFlipped = false;
   const theme = themes[currentThemeKey];
+  const isModeSelection = currentIndex === -2;
   const isIntro = currentIndex === -1;
   const total = currentQuestions.length;
   const questionBox = document.querySelector(".question-box");
   const container = document.getElementById("answersContainer");
   const fb = document.getElementById("feedback");
+
+  if (isModeSelection) {
+    questionBox.classList.remove("flashcard-mode", "is-clickable");
+    questionBox.onclick = null;
+    attachSwipeHandlers(questionBox);
+    document.getElementById("progressBar").style.width = "0%";
+    document.getElementById("quizCounter").textContent = "Choix du mode";
+    document.getElementById("question").innerHTML = "<strong>Choisis le mode d'entraînement</strong>";
+    container.innerHTML = "";
+    const list = document.createElement("div");
+    list.className = "answers-list";
+    theme.modeChoices.forEach((mode, index) => {
+      const item = document.createElement("div");
+      item.className = "answer-item";
+      item.innerHTML = `<label style="cursor:pointer;font-weight:700;">${escHtml(mode.label)}</label>`;
+      item.onclick = () => selectThemeMode(index);
+      list.appendChild(item);
+    });
+    container.appendChild(list);
+    fb.style.display = "none";
+    fb.className = "";
+    fb.innerHTML = "";
+    document.getElementById("btnFlip").style.display = "none";
+    document.getElementById("btnPrevious").disabled = true;
+    document.getElementById("btnPrevious").style.opacity = "0.55";
+    document.getElementById("btnPrevious").style.cursor = "not-allowed";
+    document.getElementById("btnValidate").style.display = "none";
+    document.getElementById("btnNext").style.display = "none";
+    return;
+  }
 
   if (isIntro) {
     questionBox.classList.remove("flashcard-mode", "is-clickable");
@@ -7375,6 +7601,7 @@ function flipFlashcard() {
 function nextQuestion() {
   if (swipeAnimating) return;
   animateQuestionTransition("next", () => {
+    if (currentIndex === -2) return;
     if (currentIndex === -1) {
       currentIndex = 0;
       loadQuestion();
